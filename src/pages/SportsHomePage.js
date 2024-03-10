@@ -17,17 +17,12 @@ const SportsHomePage = () => {
 
     const [brands, setBrands] = useState([
         // Your brand logo images here
-        "https://static.owayo-cdn.com/newhp/img/owayo-logo-language-web.svg",
-        "https://static.owayo-cdn.com/newhp/img/owayo-logo-language-web.svg",
-        "https://static.owayo-cdn.com/newhp/img/owayo-logo-language-web.svg",
-        "https://static.owayo-cdn.com/newhp/img/owayo-logo-language-web.svg",
-        "https://static.owayo-cdn.com/newhp/img/owayo-logo-language-web.svg",
-        "https://static.owayo-cdn.com/newhp/img/owayo-logo-language-web.svg",
-        "https://static.owayo-cdn.com/newhp/img/owayo-logo-language-web.svg",
-        "https://static.owayo-cdn.com/newhp/img/owayo-logo-language-web.svg",
-        "https://static.owayo-cdn.com/newhp/img/owayo-logo-language-web.svg",
-       
-       
+        "textile.jpg",
+        "recycle.jpg",
+        "sedex.jpg",
+        "iso.jpg",
+        "bsci.jpg",
+      
        
         
      ]);
@@ -37,46 +32,59 @@ const SportsHomePage = () => {
    
     const [partners, setPartners]= useState([
         // Your customer logo images here
-        "https://static.owayo-cdn.com/newhp/img/owayo-logo-language-web.svg",
-        "https://static.owayo-cdn.com/newhp/img/owayo-logo-language-web.svg",
-        "https://static.owayo-cdn.com/newhp/img/owayo-logo-language-web.svg",
-        "https://static.owayo-cdn.com/newhp/img/owayo-logo-language-web.svg",
-        "https://static.owayo-cdn.com/newhp/img/owayo-logo-language-web.svg",
-        "https://static.owayo-cdn.com/newhp/img/owayo-logo-language-web.svg",
-        "https://static.owayo-cdn.com/newhp/img/owayo-logo-language-web.svg",
-        "https://static.owayo-cdn.com/newhp/img/owayo-logo-language-web.svg",
-        "https://static.owayo-cdn.com/newhp/img/owayo-logo-language-web.svg",
-        "https://static.owayo-cdn.com/newhp/img/owayo-logo-language-web.svg",
-       
-        
-       
+        "Planet.jpg",
+        "Arex.jpg",
+        "sportic.jpg",
+        "humm.jpg",
+        "kap.jpg",
+        "gag.jpg",
+      
     ]);
      
    
     
 
     useEffect(() => {
+        // Initial position: off-screen to the right
+        $('#brand-marquee-container img').css({marginLeft: '100%'});
+    
         const interval = setInterval(() => {
-            $('#brand-marquee-container img').animate({marginLeft: '-100%'}, 10000, function() {
-                $(this).css({marginLeft: '100%', opacity: 1}).parent().find('img:last').after($(this));
-            });
+            $('#brand-marquee-container img').animate(
+                {marginLeft: '-100%'},
+                {
+                    duration: 10000, // Adjust duration as needed
+                    easing: 'linear', // Use linear easing for smoother sliding
+                    complete: function() {
+                        // Reset position to off-screen right and move last image after animation
+                        $(this).css({marginLeft: '100%', opacity: 1}).parent().find('img:last').after($(this));
+                    }
+                }
+            );
         }, 15000);
     
         return () => clearInterval(interval);
     }, [brands]);
     
     useEffect(() => {
+        // Initial position: off-screen to the right
+        $('#partner-marquee-container img').css({marginLeft: '100%'});
+    
         const interval = setInterval(() => {
-            $('#partner-marquee-container img').animate({marginLeft: '-100%'}, 10000, function() {
-                $(this).css({marginLeft: '100%', opacity: 1}).parent().find('img:last').after($(this));
-            });
+            $('#partner-marquee-container img').animate(
+                {marginLeft: '-100%'},
+                {
+                    duration: 10000, // Adjust duration as needed
+                    easing: 'linear', // Use linear easing for smoother sliding
+                    complete: function() {
+                        // Reset position to off-screen right and move last image after animation
+                        $(this).css({marginLeft: '100%', opacity: 1}).parent().find('img:last').after($(this));
+                    }
+                }
+            );
         }, 15000);
     
         return () => clearInterval(interval);
     }, [partners]);
-   
-
-
 
 
 
@@ -536,15 +544,14 @@ const SportsHomePage = () => {
   <div className="container-fluid footer-bottom">
     <div className="delivery-image">
         {/* Add your card icons here */}
-        <img src="https://th.bing.com/th/id/OIP.brvyVSLjZHtJj-re9nzn7QHaCT?pid=ImgDet&w=474&h=147&rs=1" alt="" />
+        <img src="/paypal.jpeg" alt="" />
                 
         {/* Add more card icons if needed */}
     </div>
     <div className="delivery-image">
                 {/* Add your delivery icons here */}
-                <img src="https://th.bing.com/th/id/OIP.lh3nPxgg7nSZy_cpTnesXAHaFj?w=202&h=180&c=7&r=0&o=5&pid=1.7" alt="" />
-                <img src="https://th.bing.com/th?id=OSK.3IjzF0nGWNqDr_72yQQCtOvFJOMjZwl0WWL-MawT-V4&w=80&h=80&c=7&o=6&pid=SANGAM" alt="DHL+" />
-                <img src="https://th.bing.com/th?id=OSK.Z5dLO4oDnFYEphhm11lCLUA2hkj7FZ9LkFrxUVxPuwc&w=120&h=120&c=7&rs=1&qlt=80&o=6&pid=SANGAM" alt="Emirate" />
+                <img src="/dhl.jpeg" alt="" />
+                <img src="/emirates.png" alt="DHL+" />
                 <img src="https://th.bing.com/th?id=OSK.toZONM9548Dp29GG29hnkXOQnbs_PA3cilnYrOLKiRg&w=120&h=120&c=7&rs=1&qlt=80&o=6&pid=SANGAM" alt="Qatar" />
             </div>
         </div>
