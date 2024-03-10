@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -10,44 +11,38 @@ body{
     box-sizing: border-box;
 }
 
+/* Navbar styles */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #000;
+    background: #03083e;
     color: #fff;
     height: 100px;
     padding: 10px 20px;
-    
-
 }
 
-.links {
-    display: flex;
-    gap: 1rem; /* Adjust spacing between links */
+.menu-icon {
+    display: none; /* Hide menu icon by default */
 }
 
-.links a {
-    color: #fff; /* White link color */
-    text-decoration: none;
-    padding: 0.5rem 1rem; /* Add padding for spacing */
-}
-
-.links a:hover {
-    text-decoration: underline; /* Underline link on hover */
-}
-
-
-.logo img {
-    height: 40px; /* Adjust height as needed */
-}
-
-
-.search {
+.menu-links {
     display: flex;
     align-items: center;
 }
 
+.menu-links.active {
+    flex-direction: column;
+}
+
+.menu-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: -0.70rem;
+    margin: 10px; /* Adjust spacing between links */
+}
+
+/* Search and Cart styles */
 .search input[type="text"] {
     padding: 0.5rem;
     border: none;
@@ -70,34 +65,90 @@ body{
     cursor: pointer;
     display: flex;
     align-items: center;
+    margin-right: 20px; /* Adjust margin-right as needed */
 }
 
 .cart button:hover {
     text-decoration: underline; /* Underline button on hover */
 }
 
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .search {
+        display: none; /* Hide search bar for mobile screens */
+    }
+    .menu-icon {
+        display: block; /* Show menu icon for mobile */
+        cursor: pointer;
+    }
+
+    .menu-links {
+        display: none; /* Hide links for mobile */
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        padding: 10px 0;
+    }
+
+    .menu-links.active {
+        display: flex; /* Show links when menu is active */
+    }
+}
+
+/* Media query for larger screens */
+@media (min-width: 769px) {
+    .menu-icon {
+        display: none; /* Hide menu icon for larger screens */
+    }
+
+    .menu-links {
+        display: flex; /* Show links for larger screens */
+    }
+}
+
+
+
+
+
+/* Dropdown styles */
 .dropdown {
     position: relative;
     display: inline-block;
+    margin-right: 10px;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
     min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    grid-template-columns: repeat(2, 1fr);
     z-index: 1;
+    border-radius: 4px;
+    top: 100%; /* Position the dropdown below the button */
+    left: 0; /* Align the dropdown with the button */
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+    display: grid; /* Display dropdown content as grid on hover */
+    grid-template-columns: repeat(3, 1fr); /* Define grid with 2 columns */
+    gap: 10px; /* Adjust the gap between grid items */
+    font-size: 0.80rem;
 }
+
+
 
 .dropdown-content a {
     color: black;
-    padding: 12px 16px;
+    padding: 8px 16px;
     text-decoration: none;
     display: block;
+    text-align: center;
+    flex: 1; /* Flex item takes up equal space */
+    white-space: nowrap;
+    position: relative;
 }
 
 .dropdown-content a:hover {
@@ -106,85 +157,175 @@ body{
 
 
 
-
-.our-board {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #f2f2f2;
+/* Vertical line */
+.dropdown-content a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -5px; /* Adjust the position of the vertical line */
+    width: 1px;
+    background-color: #ccc; /* Color of the vertical line */
 }
 
-.our-board h2 {
-    margin: 0;
-    font-size: 24px;
+/* Horizontal line */
+.dropdown-content a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #ccc; /* Color of the horizontal line */
+}
+
+
+
+
+
+
+
+
+
+
+
+.currency-btn,
+.country-btn {
+    /* Add your desired styles */
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    margin-right: 10px; /* Adjust margin between buttons */
+    background-color: transparent;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px; 
+   
+
+}
+
+
+.dropdown-item {
+    display: block;
+    padding: 10px;
+    font-size: 16px;
     color: #333;
-}
-
-.sliding-text {
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-}
-
-.sliding-text p {
-    margin: 0;
-    padding: 0 10px;
-    font-size: 18px;
-    color: #555;
-    animation: slideText 10s linear infinite;
-}
-
-@keyframes slideText {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 4px;
+}
 
-/* SportsHomePage.css */
+
+.dropdown-item {
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0;
+}
+
+.item-icon {
+    margin-right: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .newsletter {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px; /* Adjust spacing as needed */
-    color: white;
+    margin-bottom: -20px; /* Adjust spacing as needed */
+    margin-top: 1px;
+    color: #333;
+    position: relative;
 }
-
-
 
 .marquee-container {
-    background-color: gray;
+    background-color: #f7f7f7;
     padding: 10px;
-    border-radius: 5px;
     overflow: hidden;
-    width: 100%;
-    white-space: nowrap;
+    width: 100%; /* Adjust width as needed */
+    margin-bottom: 20px;
+    margin-top: -10px;
+    border-bottom: 1px solid #d7d7d7;
+    display: flex;
+    align-items: center;
 }
 
-.visible {
+.marquee-container h2 {
+    margin-right: 20px; /* Adjust the spacing as needed */
     display: inline-block;
-    animation: marquee-scroll 20s linear infinite;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
 }
 
-.hidden {
-    display: none;
+.vertical-line {
+    border-left: 1px solid black; /* Adjust the border style as needed */
+    height: 120%;
+    margin-left: 50px;
 }
 
+.marquee-inner {
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+}
 
+.marquee-inner img {
+    max-width: 80px; /* Adjust as needed */
+    max-height: 40px; /* Adjust as needed */
+    margin-right: 10px; /* Adjust margin between logo images */
+}
+
+.marquee-inner img:last-child {
+    margin-right: 10px; /* Remove margin for the last logo */
+}
 
 @keyframes marquee-scroll {
     0% {
         transform: translateX(100%);
+        opacity: 1;
     }
     100% {
         transform: translateX(-100%);
+        opacity: 0;
     }
 }
 
@@ -199,10 +340,37 @@ body{
 
 
 
+/* Media Query for Normal Small Screens */
+@media only screen and (max-width: 768px) {
+    .marquee-container img {
+        max-width: 60px; /* Adjust as needed */
+        max-height: 30px; /* Adjust as needed */
+        margin-right: 5px; /* Adjust margin between logo images */
+    }
+
+    .marquee-container::before,
+    .marquee-container::after {
+        width: 60px; /* Adjust as needed */
+        height: 30px; /* Adjust as needed */
+    }
+
+    .marquee-container::before {
+        margin-right: 5px; /* Adjust margin between logo images */
+    }
+
+    .marquee-container::after {
+        margin-left: 5px; /* Adjust margin between logo images */
+    }
+}
 
 
 
 
+
+
+
+
+/* articule section */
 
 .home-container {
     display: grid;
@@ -231,13 +399,65 @@ body{
     margin-bottom: 0;
   }
 
+
+
+
+
+
+  .promo-section {
+    background-color: white;
+    padding: 50px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.promo-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.promo-text {
+    text-align: center;
+    margin-bottom: 20px; /* Increased margin between text and buttons */
+}
+
+.promo-text h2 {
+    margin-bottom: 20px;
+}
+
+.promo-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 15px 40px; /* Increased padding for larger buttons */
+    background-color: #03083e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
   
 
 
 
   /* PopularCourses.css */
 
-.courses {
+.products {
     margin-top: 5rem;
     max-width: 1200px; /* Set a maximum width for the courses section */
     margin-left: auto; /* Center the courses section horizontally */
@@ -246,7 +466,7 @@ body{
 
 }
 
-.courses_container {
+.products_container {
     display: flex; /* Use flexbox */
     justify-content: space-between; /* Distribute space between items */
     margin: auto; /* Center the containers */
@@ -255,7 +475,7 @@ body{
     height: 550px;
 }
 
-.course {
+.product {
     flex: 1; /* Distribute available space equally among items */
     background: var(--color-bg1);
     text-align: center;
@@ -263,40 +483,40 @@ body{
     margin: 0 10px; /* Add margin to create space between containers */
 }
 
-.course:hover {
+.product:hover {
     background: transparent;
     border: var(--color-primary);
     transition: var(--transition);
 }
 
-.course_info {
+.product_info {
     padding: 2rem;
 }
 
-.course_info p {
+.product_info p {
     margin: 1.2rem 0 2rem;
     font-size: 0.9rem;
 }
 
-.course_image img {
+.product_image img {
     max-width: 100%; /* Ensure the image fits within its container */
     height: auto; /* Maintain aspect ratio */
 }
 
 
-.course:first-child {
+.product:first-child {
     margin-left: 10rem;
 }
 
 /* Push the last container in */
-.course:last-child {
+.product:last-child {
     margin-right: 10rem;
 }
 
 
 /* Styling the "Learn more" button */
-.course_info .btn {
-    background-color: blue;
+.product_info .btn {
+    background-color: #03083e;
     color: white;
     padding: 0.5rem 1rem;
     border: none;
@@ -310,18 +530,42 @@ body{
 }
 
 
-.course_info .btn:hover {
+.product_info .btn:hover {
     background-color: var(--color-primary-dark); /* Change background color on hover */
 }
 
 /* Set background colors for containers */
-.course:nth-child(odd) {
+.product:nth-child(odd) {
     background-color: white; /* Set black background for odd containers */
 }
 
-.course:nth-child(even) {
+.product:nth-child(even) {
     background-color: #f3f3f3; /* Set gray background for even containers */
 }
+
+/* Media queries for courses section */
+@media (max-width: 768px) {
+    .products {
+        margin-top: 3rem;
+        padding: 0 10px;
+    }
+
+    .products_container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .product {
+        margin: 10px 0;
+    }
+
+    .product:first-child,
+    .product:last-child {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 
 
 
@@ -332,13 +576,15 @@ body{
 .how-it-works {
     text-align: center;
     margin-top: 5rem;
-    padding: 0 20px; 
+    padding: 0 20px;
+    justify-content: space-between;
 }
 
 .icon-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 0 20px; 
+    display:  flex;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 200px;
+    justify-content: center;
     margin-top: 2rem;
 }
 
@@ -357,7 +603,31 @@ body{
     font-size: 1.2rem;
 }
 
+.promo-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
 
+.btn {
+    padding: 1rem 2.5rem; /* Adjust button padding */
+    margin: 0 1rem; /* Adjust button margins */
+}
+
+@media (max-width: 768px) {
+    .icon-grid {
+      gap: 20px; /* Decrease the gap between icons for small screens */
+    }
+  
+    .icon svg {
+      font-size: 2rem; /* Reduce icon size for small screens */
+    }
+  
+    .icon p {
+      font-size: 1rem; /* Reduce text size for small screens */
+    }
+  }
 
 
 
@@ -367,15 +637,19 @@ body{
 .footer {
     background-color: #f4f4f4; /* Gray background color */
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 0.5rem; /* Reduce the gap between columns */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5rem; /* Reduce the gap between columns */
     margin-top: 3rem;
-    padding: 2rem; /* Add padding to the footer */
+    padding: 3rem; /* Add padding to the footer */
     justify-content: center; /* Center align the columns */
+    width: 100%;
+    
 }
 
 .footer-column {
-    text-align: center;
+    text-align: left;
+    width: 100%;
+      
 }
 
 .footer-column h2 {
@@ -402,3 +676,188 @@ body{
 .footer-column ul li a:hover {
     text-decoration: underline;
 }
+
+
+.copyright {
+    background-color: #333; /* Dark gray background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Center align the text */
+    padding: 10px; /* Add padding to the container */
+}
+
+
+
+
+
+
+
+.footer-bottom {
+    background-color: #3333331d;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px; /* Add padding to the container */
+    height: 85px;
+    width: 100%;
+    
+  }
+
+.cards{
+    width: 50%;
+    border-right: 1px solid rgba(164, 163, 164, 0.533);
+}
+
+.container-fluid .cards i {
+    font-weight: bold;
+    justify-content: space-between;
+    padding: 10px; 
+  }
+
+  .cards i {
+    font-weight: bold;
+  }
+
+
+  .cards .fa-cc-visa{
+    color: #1a237e; /* Set Visa icon color */
+    font-size: 50px;
+  }
+  
+  .cards .fa-cc-mastercard {
+    color: #ff6f00; /* Set Mastercard icon color */
+    font-size: 50px;
+
+  }
+  
+  .cards .fa-cc-paypal {
+    color: #00acc1; /* Set American Express icon color */
+    font-size: 50px;
+
+  }
+
+
+
+
+  .delivery-image {
+    display: flex;
+    font-size: 40px;
+    height: 70px;
+    
+   
+  
+   
+}
+
+.delivery-image img {
+    padding: 10px; 
+    font-size: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.social-media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem; /* Adjust top margin as needed */
+}
+
+.social-icons a {
+    margin: 0 5px; /* Add space between icons */
+}
+
+.social-icons svg {
+    font-size: 24px; /* Adjust icon size as needed */
+    color: #333; /* Change icon color as needed */
+    font-weight: bold; /* Make icons bold */
+}
+
+.social-icons svg:hover {
+    color: #007bff; /* Change icon color on hover */
+}
+
+
+
+/* Media queries for hero image section */
+@media (max-width: 768px) {
+    .hero {
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        margin-top: 0.5rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* WhatsApp container */
+.whatsapp-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+/* WhatsApp button */
+.whatsapp-button {
+    background-color: green; /* Customize button color */
+    color: white; /* Customize button text color */
+    border: none;
+    border-radius: 50%;
+    width: 60px; /* Adjust button width as needed */
+    height: 60px;
+    font-size: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+    z-index: 999; /* Ensure button stays on top of other elements */
+}
+
+.whatsapp-button:hover {
+    background-color: darkgreen; /* Change button color on hover */
+}
+
+/* WhatsApp text */
+.whatsapp-text {
+    margin-right: 10px; /* Adjust spacing between button and text as needed */
+    font-size: 16px;
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold;
+    color: white; /* Customize text color */
+
+}
+
+/* WhatsApp text container */
+.whatsapp-text-container {
+    background-color: green; /* Customize container background color */
+    border-radius: 100px; /* Adjust border radius as needed */
+    padding: 5px 10px; /* Adjust padding as needed */
+    height: 50px;
+}
+
+/* WhatsApp text */
