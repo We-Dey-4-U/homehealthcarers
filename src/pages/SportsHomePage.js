@@ -52,8 +52,8 @@ const SportsHomePage = () => {
             $('#brand-marquee-container img').animate(
                 {marginLeft: '-100%'},
                 {
-                    duration: 4000, // Adjust duration as needed
-                    delay: 1000, // Adjust delay before animation starts (in milliseconds)
+                    duration: 20000, // Adjust duration as needed
+                    delay: 1, // Adjust delay before animation starts (in milliseconds)
                     easing: 'linear', // Use linear easing for smoother sliding
                     complete: function() {
                         // Reset position to off-screen right and move last image after animation
@@ -74,8 +74,8 @@ const SportsHomePage = () => {
             $('#partner-marquee-container img').animate(
                 {marginLeft: '-100%'},
                 {
-                    duration: 4000, // Adjust duration as needed
-                     delay: 1000, // Adjust delay before animation starts (in milliseconds)
+                    duration: 20000, // Adjust duration as needed
+                     delay: 1, // Adjust delay before animation starts (in milliseconds)
                      easing: 'linear', // Use linear easing for smoother sliding
                      complete: function() {
                         // Reset position to off-screen right and move last image after animation
