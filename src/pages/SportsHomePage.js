@@ -40,67 +40,6 @@ const SportsHomePage = () => {
         "gag.jpg",
       
     ]);
-     
-   
-    
-
-    useEffect(() => {
-        // Initial position: off-screen to the right
-        $('#brand-marquee-container img').css({marginLeft: '100%'});
-    
-        const images = $('#brand-marquee-container img');
-        const animationDuration = 80000; // Adjust duration as needed
-        const animationDelay = 50; // Adjust delay before animation starts (in milliseconds)
-    
-        const interval = setInterval(() => {
-            images.each(function(index) {
-                const delay = index * animationDelay;
-                $(this).delay(delay).animate(
-                    {marginLeft: '-100%'},
-                    {
-                        duration: animationDuration,
-                        easing: 'linear',
-                        complete: function() {
-                            // Reset position to off-screen right and move last image after animation
-                            $(this).css({marginLeft: '100%', opacity: 1}).parent().find('img:last').after($(this));
-                        }
-                    }
-                );
-            });
-        }, (images.length * animationDelay) + animationDuration); // Interval should accommodate total animation time
-    
-        return () => clearInterval(interval);
-    }, [brands]);
-    
-    useEffect(() => {
-        // Initial position: off-screen to the right
-        $('#partner-marquee-container img').css({marginLeft: '100%'});
-    
-        const images = $('#partner-marquee-container img');
-        const animationDuration = 80000; // Adjust duration as needed
-        const animationDelay = 50; // Adjust delay before animation starts (in milliseconds)
-    
-        const interval = setInterval(() => {
-            images.each(function(index) {
-                const delay = index * animationDelay;
-                $(this).delay(delay).animate(
-                    {marginLeft: '-100%'},
-                    {
-                        duration: animationDuration,
-                        easing: 'linear',
-                        complete: function() {
-                            // Reset position to off-screen right and move last image after animation
-                            $(this).css({marginLeft: '100%', opacity: 1}).parent().find('img:last').after($(this));
-                        }
-                    }
-                );
-            });
-        }, (images.length * animationDelay) + animationDuration); // Interval should accommodate total animation time
-    
-        return () => clearInterval(interval);
-    }, [partners]);
-
-
 
 
 
@@ -199,7 +138,11 @@ const SportsHomePage = () => {
             dropdownItems: [
                 'Mission', 
                 'Team', 
-                'History']
+                'History', 
+                'Careers', 
+                'Partnerships'
+
+            ]
         },
         {
             name: 'Quick Link',
@@ -380,35 +323,84 @@ const SportsHomePage = () => {
             </nav>
 
             
-            <div className="newsletter">
-    <div id="brand-marquee-container" className="marquee-container">
-        <h2>Our Brands</h2>
-        <div className="vertical-line"></div>
-        <div className="marquee-inner">
-            {brands.map((imageUrl, index) => (
-                <img key={index} src={imageUrl} alt={`brand Logo ${index}`} />
-            ))}
-        </div>
-    </div>
-    </div>
+            <div class="brand-animation  h-100">
+
+<section class="slide-option">
+	<div class="container">
+		<h3 class="no-marg">Our Certificate</h3>
+	</div>
+	<div id="infinite" class="highway-slider">
+		<div class="container highway-barrier">
+			<ul class="highway-lane">
+            <li class="highway-car"><img src="/textile.jpg" alt="" /></li>
+				<li class="highway-car"><img src="/recycle.jpg" alt="" /></li>
+				<li class="highway-car"><img src="/sedex.jpg" alt="" /></li>
+				<li class="highway-car"><img src="/iso.jpg" alt="" /></li>
+				<li class="highway-car"><img src="/bsc.jpg" alt="" /></li>
+                <li class="highway-car"><img src="/textile.jpg" alt="" /></li>
+				<li class="highway-car"><img src="/recycle.jpg" alt="" /></li>
+				<li class="highway-car"><img src="/sedex.jpg" alt="" /></li>
+				<li class="highway-car"><img src="/iso.jpg" alt="" /></li>
+				<li class="highway-car"><img src="/bsc.jpg" alt="" /></li>
+                <li class="highway-car"><img src="/textile.jpg" alt="" /></li>
+				<li class="highway-car"><img src="/recycle.jpg" alt="" /></li>
+				<li class="highway-car"><img src="/sedex.jpg" alt="" /></li>
+				<li class="highway-car"><img src="/iso.jpg" alt="" /></li>
+				<li class="highway-car"><img src="/bsc.jpg" alt="" /></li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+  
+
+
+</div>
+
+
 
             <div className="hero" >
                 {/* Hero section with changing pictures */}
-                <img src={images[currentImageIndex]} alt="Hero Image" width="100%"  height="800px"/>
+                <img src={images[currentImageIndex]} alt="Hero Image" width="100%"  height="700px"/>
             </div>
 
 
 
-            <div className="newsletter">
-    <div id="partner-marquee-container" className="marquee-container">
-        <h2>Our Partners</h2>
-        <div className="vertical-line"></div>
-        <div className="marquee-inner">
-            {partners.map((imageUrl, index) => (
-                <img key={index} src={imageUrl} alt={`partner Logo ${index}`} />
-            ))}
-        </div>
-    </div>
+<div class="brand-animation  h-100">
+
+<section class="slide-option">
+	<div class="container">
+		<h3 class="no-marg">Our Customers</h3>
+	</div>
+	<div id="infinite" class="highway-slider">
+		<div class="container highway-barrier">
+			<ul class="highway-lane">
+            <li class="highway-car"><img src="/sportic.jpg" alt="" /></li>
+				<li class="highway-car"><img src="/plannet.jpg" alt="" /></li>
+				<li class="highway-car"><img src="/sportic.jpg" alt="" /></li>
+				<li class="highway-car"><img src="/gag.jpg" alt="" /></li>
+				<li class="highway-car"><img src="/Arex.jpg" alt="" /></li>
+                <li class="highway-car"><img src="/bsci.jpg" alt="" /></li>
+				<li class="highway-car"><img src="/humm.jpg" alt="" /></li>
+				<li class="highway-car"><img src="/kap.jpg" alt="" /></li>
+                <li class="highway-car"><img src="/plannet.jpg" alt="" /></li>
+				<li class="highway-car"><img src="/sportic.jpg" alt="" /></li>
+				<li class="highway-car"><img src="/gag.jpg" alt="" /></li>
+				<li class="highway-car"><img src="/Arex.jpg" alt="" /></li>
+                <li class="highway-car"><img src="/bsci.jpg" alt="" /></li>
+				<li class="highway-car"><img src="/humm.jpg" alt="" /></li>
+				<li class="highway-car"><img src="/kap.jpg" alt="" /></li>
+				
+               
+				
+			</ul>
+		</div>
+	</div>
+</section>
+
+  
+
+
 </div>
 
 
