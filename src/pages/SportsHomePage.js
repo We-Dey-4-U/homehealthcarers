@@ -49,8 +49,8 @@ const SportsHomePage = () => {
         $('#brand-marquee-container img').css({marginLeft: '100%'});
     
         const images = $('#brand-marquee-container img');
-        const animationDuration = 70000; // Adjust duration as needed
-        const animationDelay = 200; // Adjust delay before animation starts (in milliseconds)
+        const animationDuration = 80000; // Adjust duration as needed
+        const animationDelay = 50; // Adjust delay before animation starts (in milliseconds)
     
         const interval = setInterval(() => {
             images.each(function(index) {
@@ -77,8 +77,8 @@ const SportsHomePage = () => {
         $('#partner-marquee-container img').css({marginLeft: '100%'});
     
         const images = $('#partner-marquee-container img');
-        const animationDuration = 70000; // Adjust duration as needed
-        const animationDelay = 200; // Adjust delay before animation starts (in milliseconds)
+        const animationDuration = 80000; // Adjust duration as needed
+        const animationDelay = 50; // Adjust delay before animation starts (in milliseconds)
     
         const interval = setInterval(() => {
             images.each(function(index) {
