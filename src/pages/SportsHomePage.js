@@ -48,20 +48,26 @@ const SportsHomePage = () => {
         // Initial position: off-screen to the right
         $('#brand-marquee-container img').css({marginLeft: '100%'});
     
+        const images = $('#brand-marquee-container img');
+        const animationDuration = 70000; // Adjust duration as needed
+        const animationDelay = 200; // Adjust delay before animation starts (in milliseconds)
+    
         const interval = setInterval(() => {
-            $('#brand-marquee-container img').animate(
-                {marginLeft: '-100%'},
-                {
-                    duration: 20000, // Adjust duration as needed
-                    delay: 1, // Adjust delay before animation starts (in milliseconds)
-                    easing: 'linear', // Use linear easing for smoother sliding
-                    complete: function() {
-                        // Reset position to off-screen right and move last image after animation
-                        $(this).css({marginLeft: '100%', opacity: 1}).parent().find('img:last').after($(this));
+            images.each(function(index) {
+                const delay = index * animationDelay;
+                $(this).delay(delay).animate(
+                    {marginLeft: '-100%'},
+                    {
+                        duration: animationDuration,
+                        easing: 'linear',
+                        complete: function() {
+                            // Reset position to off-screen right and move last image after animation
+                            $(this).css({marginLeft: '100%', opacity: 1}).parent().find('img:last').after($(this));
+                        }
                     }
-                }
-            );
-        }, 15000);
+                );
+            });
+        }, (images.length * animationDelay) + animationDuration); // Interval should accommodate total animation time
     
         return () => clearInterval(interval);
     }, [brands]);
@@ -70,24 +76,29 @@ const SportsHomePage = () => {
         // Initial position: off-screen to the right
         $('#partner-marquee-container img').css({marginLeft: '100%'});
     
+        const images = $('#partner-marquee-container img');
+        const animationDuration = 70000; // Adjust duration as needed
+        const animationDelay = 200; // Adjust delay before animation starts (in milliseconds)
+    
         const interval = setInterval(() => {
-            $('#partner-marquee-container img').animate(
-                {marginLeft: '-100%'},
-                {
-                    duration: 20000, // Adjust duration as needed
-                     delay: 1, // Adjust delay before animation starts (in milliseconds)
-                     easing: 'linear', // Use linear easing for smoother sliding
-                     complete: function() {
-                        // Reset position to off-screen right and move last image after animation
-                        $(this).css({marginLeft: '100%', opacity: 1}).parent().find('img:last').after($(this));
+            images.each(function(index) {
+                const delay = index * animationDelay;
+                $(this).delay(delay).animate(
+                    {marginLeft: '-100%'},
+                    {
+                        duration: animationDuration,
+                        easing: 'linear',
+                        complete: function() {
+                            // Reset position to off-screen right and move last image after animation
+                            $(this).css({marginLeft: '100%', opacity: 1}).parent().find('img:last').after($(this));
+                        }
                     }
-                }
-            );
-        }, 15000);
+                );
+            });
+        }, (images.length * animationDelay) + animationDuration); // Interval should accommodate total animation time
     
         return () => clearInterval(interval);
     }, [partners]);
-
 
 
 
@@ -229,10 +240,11 @@ const SportsHomePage = () => {
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const images = [
-        'https://static.owayo-cdn.com/newhp/img/sporthome/slider/desktop/en/custom-football-jersey-15.jpg',
-        'https://static.owayo-cdn.com/newhp/img/sporthome/slider/desktop/en/print-on-jersey-15.jpg',
-        'https://static.owayo-cdn.com/newhp/img/sporthome/slider/desktop/en/buy-football-jersey-15.jpg',
-        'https://static.owayo-cdn.com/newhp/img/sporthome/slider/desktop/en/custom-football-jersey-16.jpg',
+        "hero1.jpg",
+        "hero2.jpg",
+        "hero3.jpg",
+       
+      
     ]; // Add paths to your images
 
     useEffect(() => {
@@ -370,7 +382,7 @@ const SportsHomePage = () => {
             
             <div className="newsletter">
     <div id="brand-marquee-container" className="marquee-container">
-        <h2>Our Brand</h2>
+        <h2>Our Brands</h2>
         <div className="vertical-line"></div>
         <div className="marquee-inner">
             {brands.map((imageUrl, index) => (
@@ -380,9 +392,9 @@ const SportsHomePage = () => {
     </div>
     </div>
 
-            <div className="hero">
+            <div className="hero" >
                 {/* Hero section with changing pictures */}
-                <img src={images[currentImageIndex]} alt="Hero Image" width="100%" />
+                <img src={images[currentImageIndex]} alt="Hero Image" width="100%"  height="800px"/>
             </div>
 
 
@@ -575,6 +587,10 @@ const SportsHomePage = () => {
         <FaWhatsapp />
     </button>
     </div>
+
+
+
+    
 
    
 </div>
