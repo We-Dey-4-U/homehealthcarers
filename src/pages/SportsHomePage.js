@@ -192,6 +192,9 @@ const SportsHomePage = () => {
       
     ]; // Add paths to your images
 
+   
+   
+   
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -220,8 +223,6 @@ const SportsHomePage = () => {
     const handleCountryChange = (country) => {
         setSelectedCountry(country);
     };
-
-
 
     
     
@@ -287,7 +288,7 @@ const SportsHomePage = () => {
                 </div>
 
                 <div className="dropdown">
-                <button className="dropbtn currency-btn"><FaPoundSign /> GBP</button>
+                <button className="dropbtn currency-btn"> GBP</button>
                         <div className="dropdown-content">
                         <button className="dropdown-item" onClick={() => handleCurrencyChange('USD')}>
                             <span className="item-icon">$</span> USD
@@ -304,19 +305,31 @@ const SportsHomePage = () => {
                     
                     
                     
-                    
                     <div className="dropdown">
-                    <button className="dropbtn country-btn"> <FaFlag /> ENG</button>
-                        <div className="dropdown-content">
+                    <button className="dropbtn country-btn">  ENG</button>
+                        <div className="dropdown-content" width="200px" >
                         <button className="dropdown-item" onClick={() => handleCountryChange('USA 🇺🇸')}>
-                         <span className="item-icon">🇺🇸</span> Italian 
-                     </button>
-                   <button className="dropdown-item" onClick={() => handleCountryChange('Italy 🇮🇹')}>
-                  <span className="item-icon">🇮🇹</span> Spanish
-                  </button>
+                        <img className="item-icon"  src="/eng flag.jpg" alt="flag" />
+                         <span>English</span>
+                      </button>
+                      <button className="dropdown-item" onClick={() => handleCountryChange('USA 🇺🇸')}>
+                        <img className="item-icon" src="/french.jpg" alt="flag" />
+                         <span>French</span>
+                      </button>
+                      <button className="dropdown-item" onClick={() => handleCountryChange('USA 🇺🇸')}>
+                        <img className="item-icon" src="/spanish.jpg" alt="flag" />
+                         <span>Spanish</span>
+                      </button>
+                      <button className="dropdown-item" onClick={() => handleCountryChange('USA 🇺🇸')}>
+                        <img className="item-icon" src="/italian.jpg" alt="flag" />
+                         <span>Italian</span>
+                      </button>
+                      <button className="dropdown-item" onClick={() => handleCountryChange('USA 🇺🇸')}>
+                        <img className="item-icon" src="/dutch.jpg" alt="flag" />
+                         <span>Dutch</span>
+                      </button>
                  </div>
              </div>
-
 
 
 
