@@ -10,6 +10,8 @@ import axios from 'axios';
 import { FaDhl, FaDhlPlus  } from 'react-icons/fa'; 
 import $ from 'jquery'; 
 
+
+
 const SportsHomePage = () => {
 
   
@@ -299,20 +301,21 @@ const SportsHomePage = () => {
                         </div>
                     </div>
                    
-                   
+                    
+                    
+                    
+                    
                     <div className="dropdown">
-                    <button className="dropbtn country-btn"> <FaFlag /> Country</button>
+                    <button className="dropbtn country-btn"> <FaFlag /> ENG</button>
                         <div className="dropdown-content">
                         <button className="dropdown-item" onClick={() => handleCountryChange('USA 🇺🇸')}>
-                         <span className="item-icon">🇺🇸</span> USA
+                         <span className="item-icon">🇺🇸</span> Italian 
                      </button>
                    <button className="dropdown-item" onClick={() => handleCountryChange('Italy 🇮🇹')}>
-                  <span className="item-icon">🇮🇹</span> Italy
+                  <span className="item-icon">🇮🇹</span> Spanish
                   </button>
                  </div>
              </div>
-
-
 
 
 
