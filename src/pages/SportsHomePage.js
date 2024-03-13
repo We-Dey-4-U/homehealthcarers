@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { FaSearch, FaShoppingCart, FaUser } from 'react-icons/fa';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaYoutube ,FaBars} from 'react-icons/fa'
+import { FaSearch, FaShoppingCart, FaUser, FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaYoutube, FaBars, FaPoundSign, FaFlag, FaWhatsapp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './SportsHomePage.css'; // Import CSS file for styling
 import '@fortawesome/fontawesome-free/css/all.css';
-import { FaPoundSign, FaFlag  } from 'react-icons/fa';
-import { FaWhatsapp } from 'react-icons/fa';
 import axios from 'axios';
-import { FaDhl, FaDhlPlus  } from 'react-icons/fa'; 
-import $ from 'jquery'; 
+//import { FaDhl, FaDhlPlus  } from 'react-icons/fa'; 
+//import $ from 'jquery'; 
 
 
 
