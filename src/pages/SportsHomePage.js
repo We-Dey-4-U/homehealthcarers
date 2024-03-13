@@ -406,24 +406,14 @@ const SportsHomePage = () => {
                 <li class="highway-car"><img src="/bsci.jpg" alt="" /></li>
 				<li class="highway-car"><img src="/humm.jpg" alt="" /></li>
 				<li class="highway-car"><img src="/kap.jpg" alt="" /></li>
-				
-               
-				
 			</ul>
 		</div>
 	</div>
 </section>
 
-  
-
 
 </div>
-
-
-            
-           
-           
-            <div class="container">
+<div class="container">
     <section class="promo-section">
     <div class="container">
         <div class="promo-content">
