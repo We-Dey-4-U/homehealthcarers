@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 import './SportsHomePage.css'; // Import CSS file for styling
 import '@fortawesome/fontawesome-free/css/all.css';
 import axios from 'axios';
-//import { FaDhl, FaDhlPlus  } from 'react-icons/fa'; 
-//import $ from 'jquery'; 
+
 
 
 
@@ -557,7 +556,7 @@ const SportsHomePage = () => {
                 
         {/* Add more card icons if needed */}
     </div>
-    <div className="delivery-image">
+    <div className="delivery-image2">
                 {/* Add your delivery icons here */}
                 <img src="/dhl.jpeg" alt="" />
                 <img src="/emirates.png" alt="DHL+" />

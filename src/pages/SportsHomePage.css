@@ -414,6 +414,16 @@ div.highway-slider {
 }
 
 
+
+/* Media query for small screens */
+@media only screen and (max-width: 576px) {
+    .hero img {
+        height: auto; /* Make the image responsive */
+        max-width: 100%; /* Ensure the image fits within its container */
+    }
+}
+
+
  /* trying */
   
 .brand-animation {
@@ -443,55 +453,6 @@ div.highway-slider {
     padding: 10px 30px;
     font-size: 25px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Media Query for Normal Small Screens */
-@media only screen and (max-width: 768px) {
-    .marquee-container img {
-        max-width: 60px; /* Adjust as needed */
-        max-height: 30px; /* Adjust as needed */
-        margin-right: 5px; /* Adjust margin between logo images */
-    }
-
-    .marquee-container::before,
-    .marquee-container::after {
-        width: 60px; /* Adjust as needed */
-        height: 30px; /* Adjust as needed */
-    }
-
-    .marquee-container::before {
-        margin-right: 5px; /* Adjust margin between logo images */
-    }
-
-    .marquee-container::after {
-        margin-left: 5px; /* Adjust margin between logo images */
-    }
-}
-
-
-
-
 
 
 
@@ -570,14 +531,6 @@ div.highway-slider {
     border-radius: 5px;
     cursor: pointer;
 }
-
-
-
-
-
-
-
-  
 
 
 
@@ -880,6 +833,24 @@ div.highway-slider {
 
 
 
+.delivery-image2 {
+    display: flex;
+    font-size: 40px;
+    height: 70px;
+    
+   
+  
+   
+}
+
+.delivery-image2 img {
+    padding: 10px; 
+    font-size: 25px;
+}
+
+
+
+
 
 
 
@@ -989,3 +960,128 @@ div.highway-slider {
 }
 
 /* WhatsApp text */
+
+
+/* Media query for small screens */
+@media only screen and (max-width: 576px) {
+    .footer {
+        display: block; /* Change footer to block layout for better stacking */
+    }
+
+    .footer-column {
+        margin-bottom: 20px; /* Add space between footer columns */
+        text-align: center; /* Center-align footer columns */
+    }
+
+    .social-icons {
+        justify-content: center; /* Center-align social media icons */
+    }
+
+    .footer-bottom {
+        flex-direction: column; /* Stack card images vertically */
+        align-items: center; /* Center-align card images */
+    }
+
+    .delivery-image {
+        margin-bottom: 20px; /* Add space between card images */
+    }
+
+    .whatsapp-container {
+        flex-direction: column; /* Stack WhatsApp button and text vertically */
+        align-items: center; /* Center-align WhatsApp button and text */
+        margin-top: 20px; /* Add space above WhatsApp button */
+    }
+
+    .whatsapp-text-container {
+        margin-bottom: 10px; /* Add space between WhatsApp text and button */
+    }
+}
+
+
+
+/* Media query for small screens */
+@media only screen and (max-width: 576px) {
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .delivery-image {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Delivery service images */
+
+.delivery-image img {
+    max-width: 70%; /* Ensure images don't exceed their container's width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Prevent whitespace under images */
+    border-radius: 5px; /* Add border radius for a nicer look */
+    margin: 10px;
+    max-height: 100px;
+    width: auto;
+}
+
+/* Copyright */
+.copyright {
+    background-color: #333; /* Dark gray background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Center align the text */
+    padding: 10px; /* Add padding to the container */
+    margin-top: 20px; /* Add margin at the top */
+}
+
+.copyright p {
+    margin: 0; /* Remove default margin for paragraphs */
+}
+}
+
+
+/* Media query for small screens */
+@media screen and (max-width: 768px) {
+    .delivery-images {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+
+    .delivery-image img,
+    .delivery-image2 img {
+        max-width: 100%; /* Ensure images don't exceed container width */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 10px; /* Add spacing between images */
+    }
+}
+
+
+
+
+
+
+/* Media query for small screens */
+@media screen and (max-width: 768px) {
+    .delivery-image img {
+        max-width: 40%; /* Reduce image width to 40% on small screens */
+    }
+
+    .delivery-image2 img {
+        max-width: 40%; /* Reduce image width to 40% on small screens */
+        max-height: 60px; /* Adjust maximum height accordingly */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
