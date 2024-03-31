@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+  }
 
 body{
     margin: 0;
@@ -1056,10 +1056,6 @@ div.highway-slider {
 }
 
 
-
-
-
-
 /* Media query for small screens */
 @media screen and (max-width: 768px) {
     .delivery-image img {
@@ -1072,6 +1068,259 @@ div.highway-slider {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Default styles for event list */
+
+
+#eventList {
+   
+    margin: 20px auto;
+    gap: 20px;
+    margin-left: auto; /* Center the courses section horizontally */
+    margin-right: auto;
+    padding: 0 20px; /* Add padding to the courses section */
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Distribute space between items */
+    display: flex; /* Use flexbox */
+    flex-wrap: wrap; /* Wrap items onto multiple lines */
+    margin: 20px auto;
+    max-width: 1200px; /* Adjust the maximum width as needed */
+    max-height: 1200px;
+
+   
+}
+
+.eventItem {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    flex: 0 1 calc(45% - 20px);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column; /* Stack child elements vertically */
+    
+}
+
+
+/* Style for event list */
+#eventList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Style for event item container */
+.eventItem {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+/* Style for event name */
+.eventName {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Style for event details */
+.eventDetails strong {
+    font-weight: bold;
+    color: #333;
+}
+/* Style for event flyer image */
+.eventFlyer {
+    max-width: 800px;
+    height: auto;
+    margin-top: 10px;
+    max-height: 300px;
+}
+
+
+.purchaseTicketBtn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: auto; /* Align button to bottom */
+    align-self: center; /* Center button horizontally */
+}
+
+.purchaseTicketBtn:hover {
+    background-color: #0056b3;
+}
+
+/* Style for event flyer image */
+
+
+.eventItem {
+    flex: 0 1 calc(45% - 20px);
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.eventDetails strong {
+    font-weight: bold;
+    color: #333;
+}
+
+
+
+.purchaseTicketBtn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: auto; /* Align button to bottom */
+    align-self: center; /* Center button horizontally */
+}
+
+.purchaseTicketBtn:hover {
+    background-color: #0056b3;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    #eventList {
+        display: block; /* Change display property to block for single-column layout */
+        text-align: center; /* Center items horizontally */
+    }
+
+    .eventItem {
+        display: block; /* Change display property to block for single-column layout */
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+
+.eventCountdown {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #ff4500; /* Orange background color */
+    padding: 10px;
+    border-radius: 20px; /* Rounded border */
+    margin-top: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Box shadow for depth */
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+.eventCountdown:hover {
+    transform: translateY(-2px); /* Lift the countdown on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.12); /* Increase shadow on hover */
+}
+
+
+
+.store-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.store-link:hover {
+    background-color: #0056b3;
+}
+
+
+.store-section {
+    /* Your existing styles */
+    position: relative; /* Ensure relative positioning for absolute positioning of the button */
+}
+
+.store-content {
+    /* New style to center the button vertically and horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ensure the content takes up the full height of the banner */
+    text-align: center; /* Center-align the text content */
+    /* Add top padding to push content down */
+    margin-top: 100px;
+}
+
+.store-link {
+    /* Your existing styles */
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.store-link:hover {
+    background-color: #0056b3;
+}
+
+
+
+@media (max-width: 768px) {
+    .store-section {
+      height: auto; /* Set the height to auto for smaller screens */
+      padding: 10px; /* Adjust padding for smaller screens */
+    }
+  }
 
 
 

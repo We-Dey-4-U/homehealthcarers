@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import './SportsHomePage.css'; // Import CSS file for styling
 import '@fortawesome/fontawesome-free/css/all.css';
 import axios from 'axios';
+import EventList from '../components/EventList'; 
 
 
 
@@ -60,16 +61,16 @@ const SportsHomePage = () => {
         },
 
         {
-            name: 'Sportwear',
+            name: 'Up-Coming-Events',
             id: 4,
             dropdownItems: [
-                'Get in Touch',
-                'Contact Form',
-                'Newsletter Subscription',
-                'Legal Info',
-                'Terms of Service',
-                'Privacy Policy',
-                'Cookie Policy'
+                'Events Calendar',
+                'Upcoming Activities',
+                'Event Schedule',
+                'Event Calendar',
+                'Upcoming Events',
+                'Upcoming Events',
+                'Event Agenda'
             ]
         },
 
@@ -77,7 +78,7 @@ const SportsHomePage = () => {
       
         
         {
-            name: 'Promotion Wear',
+            name: 'Online-Store',
             id: 2,
             dropdownItems: [
                 'Customized Designs',
@@ -181,8 +182,8 @@ const SportsHomePage = () => {
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const images = [
-        "hero1.jpg",
-        "hero2.jpg",
+        "dating pics.PNG",
+        "paypal.jpeg",
         "hero3.jpg",
        
       
@@ -264,18 +265,21 @@ const SportsHomePage = () => {
                 <div className={`menu-links ${isMenuOpen ? 'active' : ''}`}>
                     {categories.map(category => (
                         <div className="dropdown" key={category.id}>
-                            <Link to={`/${category.name}`} onClick={toggleMenu}>
+                            <a href={category.name === 'Online-Store' ? "https://we-dey-4u-4life-if7p-git-main-we-dey-4-u.vercel.app/" : `/${category.name}`} onClick={toggleMenu}>
                                 {category.name}
-                            </Link>
+                            </a>
                             <div className="dropdown-content">
                                 {category.dropdownItems.map((item, index) => (
-                                    <a key={index} onClick={() => handleCategoryClick(item)}>{item}</a>
+                                    <a key={index} onClick={() => handleCategoryClick(item)} href={`/${category.name}/${item}`}>{item}</a>
                                 ))}
+                                {/* Add the online store link here */}
+                                {category.name === 'Online-Store' && (
+                                    <a href="https://we-dey-4u-4life-if7p-git-main-we-dey-4-u.vercel.app/">SHOP NOW</a>
+                                )}
                             </div>
                         </div>
                     ))}
                 </div>
-           
            
            
                 <div className="search">
@@ -283,6 +287,9 @@ const SportsHomePage = () => {
                     <button><FaSearch /></button>
                 </div>
 
+                
+                
+                
                 <div className="dropdown">
                 <button className="dropbtn currency-btn"> GBP</button>
                         <div className="dropdown-content">
@@ -330,14 +337,14 @@ const SportsHomePage = () => {
 
 
                 <div className="cart">
+                <a href="https://we-dey-4u-4life-if7p-git-main-we-dey-4-u.vercel.app/">
                     <button><FaShoppingCart /> </button>
+                    </a>
                 </div>
             </nav>
 
-            
-            <div class="brand-animation  h-100">
-
-<section class="slide-option">
+<div class="brand-animation  h-100">
+  <section class="slide-option">
 	<div class="container">
 		<h3 class="no-marg">Our Certificate</h3>
 	</div>
@@ -363,18 +370,19 @@ const SportsHomePage = () => {
 		</div>
 	</div>
 </section>
-
-  
-
-
 </div>
 
 
 
-            <div className="hero" >
-                {/* Hero section with changing pictures */}
-                <img src={images[currentImageIndex]} alt="Hero Image" width="100%"  height="700px"/>
-            </div>
+<div className="hero" style={{ position: "relative" }}>
+    {/* Hero section with changing pictures */}
+    <img src={images[currentImageIndex]} alt="Hero Image" style={{ width: "100%", height: "600px" }} />
+    <div className="hero-text" style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}>
+        <h1>Welcome to My Portfolio</h1>
+        {/* Add more text content here */}
+    </div>
+</div>
+
 
 
 
@@ -409,24 +417,47 @@ const SportsHomePage = () => {
 
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
 <div class="container">
     <section class="promo-section">
     <div class="container">
         <div class="promo-content">
             <div class="promo-text">
-                <h2>Promotional Section</h2>
-                <p>Here you can add some promotional text describing your products or services.</p>
-            </div>
-            <div class="promo-buttons">
-                <button class="btn btn-left">Left Button</button>
-                <button class="btn btn-right">Right Button</button>
+                <h2>Upcoming Events</h2>
+                 {/* EventList component */}
+                 <EventList />  
             </div>
         </div>
     </div>
 </section>
+</div>
+
+
+
+   {/* Store Section */}
+<section className="store-section" style={{ backgroundImage: `url('/buybeta blue.png')`, height: '400px', width: '100%', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <div className="container">
+    <div className="content" style={{ color: 'white', marginBottom: '60px' }}>
+            <h2>Discover Unique Customized Brand Items</h2>
+            <p>Explore our store and find customized brand items that will make your soulmate feel special</p>
+            <Link to="https://we-dey-4u-4life.vercel.app/" className="store-link">Visit Our Store</Link>
+        </div>
+    </div>
+</section>
+
 
          
-         
+<div class="container">
             {/* Popular product section */}
             <section className="products">
                 <div className="container products_container">
@@ -520,6 +551,17 @@ const SportsHomePage = () => {
             </div>
             {/* Footer */}
 
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
             <footer className="footer">
                 
                 {footerCategories.map(category => (
@@ -540,9 +582,9 @@ const SportsHomePage = () => {
     <div className="footer-column social-media">
         <h2>Follow Us</h2>
         <div className="social-icons">
-            <a href="#"><FaFacebook /></a>
+            <a href="https://www.facebook.com/share/hgi5x3MKEztwx8hd/?mibextid=K35XfP"><FaFacebook /></a>
             <a href="#"><FaTwitter /></a>
-            <a href="#"><FaInstagram /></a>
+            <a href="https://www.instagram.com/mazidukeduchess?igsh=MndnZjJja2tzNzI0&utm_source=qr"><FaInstagram /></a>
             {/* Add more social media icons as needed */}
         </div>
     </div>
