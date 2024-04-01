@@ -73,7 +73,7 @@ const EventList = () => {
                             <strong>Countdown:</strong> {event.countdown.days} days {event.countdown.hours} hours {event.countdown.minutes} minutes {event.countdown.seconds} seconds
                         </p>
                     )}
-                    <a className="purchaseTicketBtn" href="https://we-dey-4u-4life-if7p-git-main-we-dey-4-u.vercel.app/" target="_blank" rel="noopener noreferrer">
+                    <a className="purchaseTicketBtn" href="https://eventticketfrontend233.onrender.com/users.html" target="_blank" rel="noopener noreferrer">
                         <span>Secure Your Ticket</span>
                     </a>
                 </div>
