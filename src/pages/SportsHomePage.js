@@ -30,7 +30,7 @@ const SportsHomePage = () => {
         {
             name: 'Home',
             id: 1,
-            link: '/home'  // Direct link for the 'Home' category
+            link: '/'  // Direct link for the 'Home' category
         },
         {
             name: 'About Us',
@@ -43,7 +43,7 @@ const SportsHomePage = () => {
             link: '/services'  // Direct link for the 'Services' category
         },
         {
-            name: 'Workwear',
+            name: 'blog',
             id: 3,
             link: '/workwear'  // Direct link for the 'Workwear' category
         },
