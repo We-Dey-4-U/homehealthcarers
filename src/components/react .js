@@ -11,49 +11,123 @@ import EventList from '../components/EventList';
 
 const SportsHomePage = () => {
 
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
+  
 
 
-   // const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [brands, setBrands] = useState([
+        // Your brand logo images here
+        "textile.jpg",
+        "recycle.jpg",
+        "sedex.jpg",
+        "iso.jpg",
+        "bsci.jpg",
+      
+       
+        
+     ]);
 
-   /// const toggleMenu = () => {
-   //     setIsMenuOpen(!isMenuOpen);
-   // };
+
+   
+   
+    const [partners, setPartners]= useState([
+        // Your customer logo images here
+        "Planet.jpg",
+        "Arex.jpg",
+        "sportic.jpg",
+        "humm.jpg",
+        "kap.jpg",
+        "gag.jpg",
+      
+    ]);
+
+
+
 
     // Define categories array with dropdown items
-     // Define categories array with direct links for each category
-     const categories = [
+    const categories = [
         {
             name: 'Home',
             id: 1,
-            link: '/home'  // Direct link for the 'Home' category
+            dropdownItems: [
+                'Contact',
+                'Contact Form',
+                'Owayo Newsletter',
+                'Legal Information',
+                'Terms & Conditions',
+                'Privacy Policy',
+                'Cookies & Tracking'
+               
+            ]
         },
+
         {
             name: 'About Us',
             id: 4,
-            link: '/about-us'  // Direct link for the 'About Us' category
+            dropdownItems: [
+                'Events Calendar',
+                'Upcoming Activities',
+                'Event Schedule',
+                'Event Calendar',
+                'Upcoming Events',
+                'Upcoming Events',
+                'Event Agenda'
+            ]
         },
+
+
+      
+        
         {
             name: 'Services',
             id: 2,
-            link: '/services'  // Direct link for the 'Services' category
+            dropdownItems: [
+                'Customized Designs',
+                'Efficient Logistics',
+                'Flexible Quantities',
+                'Reorder Assurance',
+                'Innovative Research',
+                'Comprehensive Production',
+                'Direct Printing',
+                'Team-Specific Designs',
+                 'Branding Solutions'
+            ]
         },
+
+
         {
             name: 'Workwear',
-            id: 3,
-            link: '/workwear'  // Direct link for the 'Workwear' category
+            id: 2,
+            dropdownItems: [
+                'My Design',
+                'Precise Logistics',
+                'One or ten thousand',
+                'Guaranteed Reorders',
+                'Research & Development',
+                'All-in-One Producer',
+                'Print, no pressing',
+                'Individual Team Design',
+                'Corporate Identity'
+            ]
         },
-        {
-            name: 'Contact Us',
-            id: 5,
-            link: '/contact-us'  // Direct link for the 'Contact Us' category
-        },
-    ];
 
+
+        {
+            name: 'contact Us',
+            id: 2,
+            dropdownItems: [
+                'Contact',
+                'Contact Form',
+                'Owayo Newsletter',
+                'Legal Information',
+                'Terms & Conditions',
+                'Privacy Policy',
+                'Cookies & Tracking'
+            ]
+        },
+       
+       
+        
+    ];
 
           //footer data
     const [footerCategories, setFooterCategories] = useState([
@@ -70,19 +144,19 @@ const SportsHomePage = () => {
             ]
         },
         {
-            name: 'Visit Us',
+            name: 'Quick Link',
             id: 6,
             dropdownItems: [
-                '123 Anywhere  St., Any City, ST 12345', 
-                '+2347084649728', 
-                'homehealthcare@gmail.com']
+                'FAQ', 
+                'Shipping', 
+                'Support']
         },
         {
-            name: 'Quick Link',
+            name: 'Categories',
             id: 7,
             dropdownItems: [
-                'About us', 
-                'Services', 
+                'Products', 
+                'Promotions', 
                 'Collections']
         }
     ]);
@@ -188,7 +262,12 @@ const SportsHomePage = () => {
         // Handle category click
     };
 
-   
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
     const [selectedCurrency, setSelectedCurrency] = useState('');
     const [selectedCountry, setSelectedCountry] = useState('');
 
@@ -232,78 +311,93 @@ const SportsHomePage = () => {
         <div className="homepage">
             <nav className="navbar">
                 <div className="logo">
-                    <img 
-                        src={process.env.PUBLIC_URL + '/logo.JPG'} 
-                        alt="Logo" 
-                        style={{ 
-                            width: '70px', 
-                            height: 'auto',
-                            borderRadius: '10px'  // Adjust the border radius as per your design
-                        }} 
-                    />
+                    <img src="" alt="Logo" />
                 </div>
-
+               
                 <div className="menu-icon" onClick={toggleMenu}>
                     <FaBars />
                 </div>
 
+
+
                 <div className={`menu-links ${isMenuOpen ? 'active' : ''}`}>
                     {categories.map(category => (
-                        <Link 
-                            key={category.id} 
-                            to={category.link} 
-                            onClick={toggleMenu}
-                            className="nav-link"
-                        >
-                            {category.name}
-                        </Link>
+                        <div className="dropdown" key={category.id}>
+                            <a href={category.name === 'Online-Store' ? "https://we-dey-4u-4life-if7p-git-main-we-dey-4-u.vercel.app/" : `/${category.name}`} onClick={toggleMenu}>
+                                {category.name}
+                            </a>
+                            <div className="dropdown-content">
+                                {category.dropdownItems.map((item, index) => (
+                                    <a key={index} onClick={() => handleCategoryClick(item)} href={`/${category.name}/${item}`}>{item}</a>
+                                ))}
+                                {/* Add the online store link here */}
+                                {category.name === 'Online-Store' && (
+                                    <a href="https://we-dey-4u-4life-if7p-git-main-we-dey-4-u.vercel.app/">SHOP NOW</a>
+                                )}
+                            </div>
+                        </div>
                     ))}
                 </div>
-
+           
+           
                 <div className="search">
                     <input type="text" placeholder="Search..." />
                     <button><FaSearch /></button>
                 </div>
 
+                
+                
+                
                 <div className="dropdown">
-                    <button className="dropbtn currency-btn">GBP</button>
-                    <div className="dropdown-content">
+                <button className="dropbtn currency-btn"> GBP</button>
+                        <div className="dropdown-content">
                         <button className="dropdown-item" onClick={() => handleCurrencyChange('USD')}>
                             <span className="item-icon">$</span> USD
-                        </button>
-                        <button className="dropdown-item" onClick={() => handleCurrencyChange('Euro')}>
+                      </button>
+                         <button className="dropdown-item" onClick={() => handleCurrencyChange('Euro')}>
                             <span className="item-icon">€</span> Euro
+                       </button>
+                         <button className="dropdown-item" onClick={() => handleCurrencyChange('GBP')}>
+                          <span className="item-icon">£</span> GBP
                         </button>
-                        <button className="dropdown-item" onClick={() => handleCurrencyChange('GBP')}>
-                            <span className="item-icon">£</span> GBP
-                        </button>
+                        </div>
                     </div>
-                </div>
+                   
+                    
+                    
+                    
+                    <div className="dropdown">
+                    <button className="dropbtn country-btn">  ENG</button>
+                        <div className="dropdown-content" width="200px" >
+                        <button className="dropdown-item" onClick={() => handleCountryChange('USA 🇺🇸')}>
+                        <img className="item-icon"  src="/eng flag.jpg" alt="flag" />
+                         <span>English</span>
+                      </button>
+                      <button className="dropdown-item" onClick={() => handleCountryChange('USA 🇺🇸')}>
+                        <img className="item-icon" src="/french.jpg" alt="flag" />
+                         <span>French</span>
+                      </button>
+                      <button className="dropdown-item" onClick={() => handleCountryChange('USA 🇺🇸')}>
+                        <img className="item-icon" src="/spanish.jpg" alt="flag" />
+                         <span>Spanish</span>
+                      </button>
+                      <button className="dropdown-item" onClick={() => handleCountryChange('USA 🇺🇸')}>
+                        <img className="item-icon" src="/italian.jpg" alt="flag" />
+                         <span>Italian</span>
+                      </button>
+                      <button className="dropdown-item" onClick={() => handleCountryChange('USA 🇺🇸')}>
+                        <img className="item-icon" src="/dutch.jpg" alt="flag" />
+                         <span>Dutch</span>
+                      </button>
+                 </div>
+             </div>
 
-                <div className="dropdown">
-                    <button className="dropbtn country-btn">ENG</button>
-                    <div className="dropdown-content" width="200px">
-                        <button className="dropdown-item" onClick={() => handleCountryChange('USA 🇺🇸')}>
-                            <img className="item-icon"  src="/eng flag.jpg" alt="flag" />
-                            <span>English</span>
-                        </button>
-                        <button className="dropdown-item" onClick={() => handleCountryChange('USA 🇺🇸')}>
-                            <img className="item-icon" src="/french.jpg" alt="flag" />
-                            <span>French</span>
-                        </button>
-                        <button className="dropdown-item" onClick={() => handleCountryChange('USA 🇺🇸')}>
-                            <img className="item-icon" src="/spanish.jpg" alt="flag" />
-                            <span>Spanish</span>
-                        </button>
-                        <button className="dropdown-item" onClick={() => handleCountryChange('USA 🇺🇸')}>
-                            <img className="item-icon" src="/italian.jpg" alt="flag" />
-                            <span>Italian</span>
-                        </button>
-                        <button className="dropdown-item" onClick={() => handleCountryChange('USA 🇺🇸')}>
-                            <img className="item-icon" src="/dutch.jpg" alt="flag" />
-                            <span>Dutch</span>
-                        </button>
-                    </div>
+
+
+                <div className="cart">
+                <a href="https://we-dey-4u-4life-if7p-git-main-we-dey-4-u.vercel.app/">
+                    <button><FaShoppingCart /> </button>
+                    </a>
                 </div>
             </nav>
 
@@ -492,8 +586,27 @@ const SportsHomePage = () => {
     </div>
  </footer>
 
+  {/* Card Images Section */}
+  <div className="container-fluid footer-bottom">
+    <div className="delivery-image">
+        {/* Add your card icons here */}
+        <img src="/paypal.jpeg" alt="" />
+                
+        {/* Add more card icons if needed */}
+    </div>
+    <div className="delivery-image2">
+                {/* Add your delivery icons here */}
+                <img src="/dhl.jpeg" alt="" />
+                <img src="/emirates.png" alt="DHL+" />
+                <img src="https://th.bing.com/th?id=OSK.toZONM9548Dp29GG29hnkXOQnbs_PA3cilnYrOLKiRg&w=120&h=120&c=7&rs=1&qlt=80&o=6&pid=SANGAM" alt="Qatar" />
+            </div>
+        </div>
+
+ 
+
+
 <div className="copyright">
-    <p>© 2015 home healthcare services. All rights reserved.</p>
+    <p>© 2015 home health services. All rights reserved.</p>
 </div>
 
 {/* WhatsApp button */}
@@ -505,7 +618,13 @@ const SportsHomePage = () => {
     <button className="whatsapp-button" onClick={handleWhatsAppClick}>
         <FaWhatsapp />
     </button>
-    </div>  
+    </div>
+
+
+
+    
+
+   
 </div>
     );
 }
