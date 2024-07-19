@@ -1,17 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import { FaSearch, FaShoppingCart, FaUser, FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaYoutube, FaBars, FaPoundSign, FaFlag, FaWhatsapp, FaPhone  } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import './SportsHomePage.css'; // Import CSS file for styling
-import '@fortawesome/fontawesome-free/css/all.css';
-import axios from 'axios';
-import EventList from '../components/EventList'; 
-
+import {
+    FaEnvelope,
+    FaSearch,
+    FaShoppingCart,
+    FaUser,
+    FaFacebook,
+    FaTwitter,
+    FaInstagram,
+    FaLinkedin,
+    FaYoutube,
+    FaBars,
+    FaPoundSign,
+    FaFlag,
+    FaWhatsapp,
+    FaPhone,
+  } from 'react-icons/fa';
+  import { Link } from 'react-router-dom';
+  import './SportsHomePage.css'; // Import CSS file for styling
+  import '@fortawesome/fontawesome-free/css/all.css';
+  import axios from 'axios';
+  import EventList from '../components/EventList';
+  
 
 
 
 const SportsHomePage = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    // Check if the screen width is small
+  const isSmallScreen = window.innerWidth <= 600;
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -66,9 +83,9 @@ const SportsHomePage = () => {
             name: 'Visit Us',
             id: 6,
             dropdownItems: [
-                '123 Anywhere  St., Any City, ST 12345', 
+                '104A Ogudu Rd, Ojota, Ikeja, Lagos, Nigeria', 
                 '+2348020956712', 
-                'homehealthcare@gmail.com']
+                'homehealthcarers@gmail.com']
         },
         {
             name: 'Quick Link',
@@ -85,9 +102,9 @@ const SportsHomePage = () => {
    
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const images = [
-        "50 care.jpg",
-        "handcare.jpg",
-        "elder lady home care.jpg",
+        "/50 care.jpg",
+        "/handcare.jpg",
+        "/elder lady home care.jpg",
        
       
     ]; // Add paths to your images
@@ -97,50 +114,50 @@ const SportsHomePage = () => {
         {
             id: 1,
             title: ' Personal Care',
-            image: 'elder lady home care.jpg',
-            link: '/services/customized-designs'
+            image: '/elder lady home care.jpg',
+            link: '/services/personal-care'
         },
         {
             id: 2,
             title: 'Medication Management',
-            image: '50 care.jpg',
-            link: '/services/efficient-logistics'
+            image: '/50 care.jpg',
+            link: '/services/MedicationManagementPage'
         },
         {
             id: 3,
             title: 'in home Physical Therapy',
-            image: 'physical therapy.jpg',
-            link: '/services/flexible-quantities'
+            image: '/physical therapy.jpg',
+            link: '/services/PhysicalTherapyPage'
         },
         {
             id: 4,
             title: ' Rehabilitation and Therapy',
-            image: 'rehab.jpg',
-            link: '/services/reorder-assurance'
+            image: '/rehab.jpg',
+            link: '/services/RehabilitationTherapyPage'
         },
         {
             id: 5,
             title: 'Skilled Nursing Care',
-            image: 'skill nursing.jpg',
-            link: '/services/innovative-research'
+            image: '/skill nursing.jpg',
+            link: '/services/SkilledNursingCarePage'
         },
         {
             id: 6,
             title: 'Elderly Care',
             image: 'eldercare.jpg',
-            link: '/services/comprehensive-production'
+            link: '/services/ElderlyCarePage'
         },
         {
             id: 7,
             title: ' Companionship and Socialization',
-            image: 'companion.jpg',
-            link: '/services/direct-printing'
+            image: '/companion.jpg',
+            link: '/services/CompanionshipAndSocializationPage'
         },
         {
             id: 8,
             title: ' Light Housekeeping',
-            image: 'HouseKeeping.jpg',
-            link: '/services/team-specific-designs'
+            image: '/HouseKeeping.jpg',
+            link: '/services/LightHousekeepingPage'
         },
         
     ]);
@@ -306,12 +323,50 @@ const SportsHomePage = () => {
                     <div className="content" style={{ color: 'white', marginBottom: '60px' }}>
                         <h2>Experience the difference with our premium homecare services</h2>
                         <p>carefully crafted to deliver unparalleled peace of mind</p>
-                        <Link to="/contact" className="store-link" style={{ display: 'inline-block', padding: '10px 20px', fontSize: '25px', color: 'white', backgroundColor: 'transparent', border: '2px solid white', borderRadius: '5px', textDecoration: 'none', transition: 'background-color 0.3s, color 0.3s' }}>
-                            <FaPhone className="contact-icon" style={{ marginRight: '10px' }} />
-                            Contact Us
-                        </Link>
-                        <h3 style={{marginLeft: '500px', marginTop: '100px', fontSize: '25px', color: 'white' }}>24/7 Service Available</h3>
-                        <h3 style={{marginLeft: '500px', fontSize: '20px', color: 'white' }}>+234</h3>
+                        <Link
+        to="/contact"
+        className="store-link"
+        style={{
+          display: 'inline-block',
+          padding: '10px 20px',
+          fontSize: isSmallScreen ? '20px' : '35px',
+          color: 'white',
+          backgroundColor: 'transparent',
+          border: '2px solid white',
+          borderRadius: '5px',
+          textDecoration: 'none',
+          transition: 'background-color 0.3s, color 0.3s',
+        }}
+      >
+        <FaEnvelope
+          className="contact-icon"
+          style={{ marginRight: '10px' }}
+        />
+        Contact Us
+      </Link>
+      <h3
+        style={{
+          marginLeft: isSmallScreen ? '20px' : '300px',
+          marginTop: isSmallScreen ? '20px' : '100px',
+          fontSize: isSmallScreen ? '15px' : '25px',
+          color: 'white',
+        }}
+      >
+        call our landline 24/7 Service Available
+      </h3>
+      <h3
+        style={{
+          marginLeft: isSmallScreen ? '20px' : '300px',
+          fontSize: isSmallScreen ? '20px' : '35px',
+          color: 'white',
+        }}
+      >
+        <FaPhone
+          className="contact-icon"
+          style={{ marginRight: '10px' }}
+        />
+        017360442 or send us a message
+      </h3>
                     </div>
                 </div>
             </section>
@@ -361,9 +416,9 @@ const SportsHomePage = () => {
     <div className="footer-column social-media">
         <h2>Follow Us</h2>
         <div className="social-icons">
-            <a href="https://www.facebook.com/share/hgi5x3MKEztwx8hd/?mibextid=K35XfP"><FaFacebook /></a>
+            <a href=""><FaFacebook /></a>
             <a href="#"><FaTwitter /></a>
-            <a href="https://www.instagram.com/mazidukeduchess?igsh=MndnZjJja2tzNzI0&utm_source=qr"><FaInstagram /></a>
+            <a href=""><FaInstagram /></a>
             {/* Add more social media icons as needed */}
         </div>
         <div className="logo">

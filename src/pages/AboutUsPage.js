@@ -37,7 +37,7 @@ const AboutUsPage = () => {
         {
             name: 'Visit Us',
             id: 6,
-            dropdownItems: ['123 Anywhere  St., Any City, ST 12345', '+2347084649728', 'homehealthcare@gmail.com']
+            dropdownItems: ['104A Ogudu Rd, Ojota, Ikeja, Lagos, Nigeria', '+2348020956712', 'homehealthcarers@gmail.com']
         },
         {
             name: 'Quick Link',
@@ -171,9 +171,9 @@ const AboutUsPage = () => {
     <div className="footer-column social-media">
         <h2>Follow Us</h2>
         <div className="social-icons">
-            <a href="https://www.facebook.com/share/hgi5x3MKEztwx8hd/?mibextid=K35XfP"><FaFacebook /></a>
+            <a href=""><FaFacebook /></a>
             <a href="#"><FaTwitter /></a>
-            <a href="https://www.instagram.com/mazidukeduchess?igsh=MndnZjJja2tzNzI0&utm_source=qr"><FaInstagram /></a>
+            <a href=""><FaInstagram /></a>
             {/* Add more social media icons as needed */}
         </div>
         <div className="logo">

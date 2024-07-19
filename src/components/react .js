@@ -297,11 +297,7 @@ const SportsHomePage = () => {
         // Handle error if needed
     });
 
-        // Construct the WhatsApp URL
-       // const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-
-        // Open WhatsApp in a new tab
-       // window.open(url, '_blank');
+       
     };
 
 
