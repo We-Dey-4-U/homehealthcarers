@@ -26,8 +26,36 @@ import '@fortawesome/fontawesome-free/css/all.css';
 const SportsHomePage = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    // Check if the screen width is small
-  const isSmallScreen = window.innerWidth <= 600;
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const isSmallScreen = window.innerWidth <= 600;
+
+    // List of background images for the slide effect
+    const images = [
+        '/handcare.JPG',
+        '/50 care.jpg',
+        '/physical therapy.JPG',
+        '/rehab.JPG'
+    ];
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+        }, 5000); // Change image every 5 seconds
+
+        return () => clearInterval(interval);
+    }, [images.length]);
+
+    const heroBackgroundStyles = {
+        backgroundImage: `url(${images[currentImageIndex]})`,
+        height: '400px',
+        width: '100%',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        transition: 'background-image 1s ease-in-out',
+    };
+
+
+ 
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -99,8 +127,6 @@ const SportsHomePage = () => {
 
     // Define courses array with sample data
    
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const images = ["50 care.jpg", "handcare.jpg", "elder lady home care.jpg"];
    
 
 
@@ -122,146 +148,128 @@ const SportsHomePage = () => {
         window.open(whatsappURL, '_blank');
     };
 
-
   
 
     return (
         <div className="homepage">
-            <nav className="navbar">
-                <div className="logo">
-                    <img
-                        src={process.env.PUBLIC_URL + '/logo.JPG'}
-                        alt="Logo"
-                        style={{
-                            width: '70px',
-                            height: 'auto',
-                            borderRadius: '10px'
-                        }}
-                    />
-                </div>
-
-                <div className="menu-icon" onClick={toggleMenu}>
-                    <FaBars />
-                </div>
-
-                <div className={`menu-links ${isMenuOpen ? 'active' : ''}`}>
-                    {categories.map(category => (
-                        <Link
-                            key={category.id}
-                            to={category.link}
-                            onClick={toggleMenu}
-                            className="nav-link"
-                        >
-                            {category.name}
-                        </Link>
-                    ))}
-                </div>
-
-                <div className="search">
-                    <input type="text" placeholder="Search..." />
-                    <button><FaSearch /></button>
-                </div>
-            </nav>
-
-
-
-
-
-     <div className="hero" style={{ position: "relative" }}>
-      {currentImageIndex === 0 && (
-        <img
-          src="/50 care.jpg"
-          alt="Hero Image"
-          style={{ width: "100%", height: "400px", objectFit: "cover" }}
-        />
-      )}
-      {currentImageIndex === 1 && (
-        <img
-          src="/handcare.jpg"
-          alt="Hero Image"
-          style={{ width: "100%", height: "400px", objectFit: "cover" }}
-        />
-      )}
-      {currentImageIndex === 2 && (
-        <img
-          src="/elder lady home care.jpg"
-          alt="Hero Image"
-          style={{ width: "100%", height: "400px", objectFit: "cover" }}
-        />
-      )}
-      <div
-        className="hero-text"
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-        }}
-      >
-        {/* Add any text or content you want to overlay here */}
-      </div>
-    </div>
-
-
-
-
-            <div className="container">
-                <section className="promo-section">
-                    <div className="container">
-                        <div className="promo-content">
-                            <div className="promo-text">
-                                <h2>
-                                    At our homecare services agency, we offer exceptional, personalized services designed to
-                                    provide you with the peace of mind you deserve
-                                </h2>
-                            </div>
-                        </div>
-                        <div className="services-grid">
-                            <div className="service-container">
-                                <img src="/elder lady home care.jpg" alt="Personal Care" className="service-image" />
-                                <h3>Personal Care</h3>
-                                <Link to="/pages/personal-care">Read more</Link>
-                            </div>
-                            <div className="service-container">
-                                <img src="/50 care.jpg" alt="Medication Management" className="service-image" />
-                                <h3>Medication Management</h3>
-                                <Link to="/pages/MedicationManagementPage">Read more</Link>
-                            </div>
-                            <div className="service-container">
-                                <img src="/physical therapy.jpg" alt="in home Physical Therapy" className="service-image" />
-                                <h3>in home Physical Therapy</h3>
-                                <Link to="/pages/PhysicalTherapyPage">Read more</Link>
-                            </div>
-                            <div className="service-container">
-                                <img src="/rehab.jpg" alt="Rehabilitation and Therapy" className="service-image" />
-                                <h3>Rehabilitation and Therapy</h3>
-                                <Link to="/pages/RehabilitationTherapyPage">Read more</Link>
-                            </div>
-                            <div className="service-container">
-                                <img src="/skill nursing.jpg" alt="Skilled Nursing Care" className="service-image" />
-                                <h3>Skilled Nursing Care</h3>
-                                <Link to="/pages/SkilledNursingCarePage">Read more</Link>
-                            </div>
-                            <div className="service-container">
-                                <img src="eldercare.jpg" alt="Elderly Care" className="service-image" />
-                                <h3>Elderly Care</h3>
-                                <Link to="/pages/ElderlyCarePage">Read more</Link>
-                            </div>
-                            <div className="service-container">
-                                <img src="/companion.jpg" alt="Companionship and Socialization" className="service-image" />
-                                <h3>Companionship and Socialization</h3>
-                                <Link to="/pages/CompanionshipPage">Read more</Link>
-                            </div>
-                            <div className="service-container">
-                                <img src="/HouseKeeping.jpg" alt="Companionship and Socialization" className="service-image" />
-                                <h3>Light housekeeping</h3>
-                                <Link to="/pages/LightHousekeepingPage">Read more</Link>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+        <nav className="navbar">
+            <div className="logo">
+                <img
+                    src={process.env.PUBLIC_URL + '/logo.JPG'}
+                    alt="Logo"
+                    style={{
+                        width: '70px',
+                        height: 'auto',
+                        borderRadius: '10px'
+                    }}
+                />
             </div>
 
+            <div className="menu-icon" onClick={toggleMenu}>
+                <FaBars />
+            </div>
+
+            <div className={`menu-links ${isMenuOpen ? 'active' : ''}`}>
+                {categories.map(category => (
+                    <Link
+                        key={category.id}
+                        to={category.link}
+                        onClick={toggleMenu}
+                        className="nav-link"
+                    >
+                        {category.name}
+                    </Link>
+                ))}
+            </div>
+
+            <div className="search">
+                <input type="text" placeholder="Search..." />
+                <button><FaSearch /></button>
+            </div>
+        </nav>
+
+        <section className="hero" style={heroBackgroundStyles}>
+                <div className="container">
+                    <div className="content" style={{ color: 'white', marginBottom: '60px' }}>
+                        <h2>Experience the difference with our premium homecare services</h2>
+                        <p>Carefully crafted to deliver unparalleled peace of mind</p>
+                        <Link
+                            to="/contact"
+                            className="store-link"
+                            style={{
+                                display: 'inline-block',
+                                padding: '10px 20px',
+                                fontSize: isSmallScreen ? '20px' : '35px',
+                                color: 'white',
+                                backgroundColor: 'transparent',
+                                border: '2px solid white',
+                                borderRadius: '5px',
+                                textDecoration: 'none',
+                                transition: 'background-color 0.3s, color 0.3s',
+                            }}
+                        >
+                            Contact Us
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
+        <div className="container">
+            <section className="promo-section">
+                <div className="container">
+                    <div className="promo-content">
+                        <div className="promo-text">
+                            <h2>
+                                At our homecare services agency, we offer exceptional, personalized services designed to
+                                provide you with the peace of mind you deserve
+                            </h2>
+                        </div>
+                    </div>
+                    <div className="services-grid">
+                        <div className="service-container">
+                            <img src={process.env.PUBLIC_URL + '/elder lady home care.jpg'} alt="Personal Care" className="service-image" />
+                            <h3>Personal Care</h3>
+                            <Link to="/pages/personal-care">Read more</Link>
+                        </div>
+                        <div className="service-container">
+                            <img src={process.env.PUBLIC_URL + '/50 care.jpg'} alt="Medication Management" className="service-image" />
+                            <h3>Medication Management</h3>
+                            <Link to="/pages/MedicationManagementPage">Read more</Link>
+                        </div>
+                        <div className="service-container">
+                            <img src={process.env.PUBLIC_URL + '/physical therapy.jpg'} alt="in home Physical Therapy" className="service-image" />
+                            <h3>in home Physical Therapy</h3>
+                            <Link to="/pages/PhysicalTherapyPage">Read more</Link>
+                        </div>
+                        <div className="service-container">
+                            <img src={process.env.PUBLIC_URL + '/rehab.jpg'} alt="Rehabilitation and Therapy" className="service-image" />
+                            <h3>Rehabilitation and Therapy</h3>
+                            <Link to="/pages/RehabilitationTherapyPage">Read more</Link>
+                        </div>
+                        <div className="service-container">
+                            <img src={process.env.PUBLIC_URL + '/skill nursing.jpg'} alt="Skilled Nursing Care" className="service-image" />
+                            <h3>Skilled Nursing Care</h3>
+                            <Link to="/pages/SkilledNursingCarePage">Read more</Link>
+                        </div>
+                        <div className="service-container">
+                            <img src={process.env.PUBLIC_URL + '/eldercare.jpg'} alt="Elderly Care" className="service-image" />
+                            <h3>Elderly Care</h3>
+                            <Link to="/pages/ElderlyCarePage">Read more</Link>
+                        </div>
+                        <div className="service-container">
+                            <img src={process.env.PUBLIC_URL + '/companion.jpg'} alt="Companionship and Socialization" className="service-image" />
+                            <h3>Companionship and Socialization</h3>
+                            <Link to="/pages/CompanionshipPage">Read more</Link>
+                        </div>
+                        <div className="service-container">
+                            <img src={process.env.PUBLIC_URL + '/HouseKeeping.jpg'} alt="Companionship and Socialization" className="service-image" />
+                            <h3>Light housekeeping</h3>
+                            <Link to="/pages/LightHousekeepingPage">Read more</Link>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
 
 
    {/* contact Section */}
