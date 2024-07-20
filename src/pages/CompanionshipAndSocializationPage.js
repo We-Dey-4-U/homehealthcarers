@@ -10,10 +10,10 @@ const CompanionshipAndSocializationPage = () => {
 
     // List of background images for the slide effect
     const images = [
-        '/images/handcare.JPG',
-        '/images/50 care.JPG',
-        '/images/physical therapy.JPG',
-        '/images/rehab.JPG'
+        '/handcare.JPG',
+        '/50 care.JPG',
+        '/physical therapy.JPG',
+        '/rehab.JPG'
     ];
 
     useEffect(() => {
@@ -155,7 +155,7 @@ const CompanionshipAndSocializationPage = () => {
                             </ul>
                         </div>
                         <div className="about-us-image">
-                            <img src="/companion.jpg" alt="Companionship and Socialization Image" style={{ width: "100%", height: "auto", borderRadius: "8px" }} />
+                            <img src="/images/companion.JPG" alt="Companionship and Socialization Image" style={{ width: "100%", height: "auto", borderRadius: "8px" }} />
                             <figcaption>
                                 <strong>Why Choose Our Companionship and Socialization Services?</strong>
                                 <br />
