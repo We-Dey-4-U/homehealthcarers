@@ -114,49 +114,49 @@ const SportsHomePage = () => {
             id: 1,
             title: ' Personal Care',
             image: '/elder lady home care.jpg',
-            link: '/services/personal-care'
+            link: '/pages/personal-care'
         },
         {
             id: 2,
             title: 'Medication Management',
             image: '/50 care.jpg',
-            link: '/services/MedicationManagementPage'
+            link: '/pages/MedicationManagementPage'
         },
         {
             id: 3,
             title: 'in home Physical Therapy',
             image: '/physical therapy.jpg',
-            link: '/services/PhysicalTherapyPage'
+            link: '/pages/PhysicalTherapyPage'
         },
         {
             id: 4,
             title: ' Rehabilitation and Therapy',
             image: '/rehab.jpg',
-            link: '/services/RehabilitationTherapyPage'
+            link: '/pages/RehabilitationTherapyPage'
         },
         {
             id: 5,
             title: 'Skilled Nursing Care',
             image: '/skill nursing.jpg',
-            link: '/services/SkilledNursingCarePage'
+            link: '/pages/SkilledNursingCarePage'
         },
         {
             id: 6,
             title: 'Elderly Care',
             image: 'eldercare.jpg',
-            link: '/services/ElderlyCarePage'
+            link: '/pages/ElderlyCarePage'
         },
         {
             id: 7,
             title: ' Companionship and Socialization',
             image: '/companion.jpg',
-            link: '/services/CompanionshipAndSocializationPage'
+            link: '/pages/CompanionshipAndSocializationPage'
         },
         {
             id: 8,
             title: ' Light Housekeeping',
             image: '/HouseKeeping.jpg',
-            link: '/services/LightHousekeepingPage'
+            link: '/pages/LightHousekeepingPage'
         },
         
     ]);
