@@ -28,7 +28,7 @@ const SportsHomePage = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [serviceImages, setServiceImages] = useState([
-        '/images/elder lady home care.jpg',
+        '/images/elder lady home care.JPG',
         '/images/50 care.JPG',
         '/images/physical therapy.JPG',
         '/images/rehab.JPG',
