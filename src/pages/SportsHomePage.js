@@ -248,7 +248,7 @@ const SportsHomePage = () => {
                             <div className="service-container" key={index}>
                                 <img src={process.env.PUBLIC_URL + image} alt={`Service ${index + 1}`} className="service-image" />
                                 <h3>{['Personal Care', 'Medication Management', 'In Home Physical Therapy', 'Rehabilitation and Therapy', 'Skilled Nursing Care', 'Elderly Care', 'Companionship and Socialization', 'Light Housekeeping'][index]}</h3>
-                                <Link to={`/pages/${['personal-care', 'MedicationManagementPage', 'PhysicalTherapyPage', 'RehabilitationTherapyPage', 'SkilledNursingCarePage', 'ElderlyCarePage', 'CompanionshipPage', 'LightHousekeepingPage'][index]}`}>Read more</Link>
+                                <Link to={`/pages/${['personal-care', 'MedicationManagementPage', 'PhysicalTherapyPage', 'RehabilitationTherapyPage', 'SkilledNursingCarePage', 'ElderlyCarePage', 'CompanionshipAndSocializationPage', 'LightHousekeepingPage'][index]}`}>Read more</Link>
                             </div>
                         ))}
                     </div>
