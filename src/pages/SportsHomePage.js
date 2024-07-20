@@ -27,10 +27,20 @@ const SportsHomePage = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [serviceImages, setServiceImages] = useState([
+        '/elder lady home care.jpg',
+        '/50 care.jpg',
+        '/physical therapy.jpg',
+        '/rehab.jpg',
+        '/skill nursing.jpg',
+        '/eldercare.jpg',
+        '/companion.jpg',
+        '/HouseKeeping.jpg'
+    ]);
     const isSmallScreen = window.innerWidth <= 600;
 
     // List of background images for the slide effect
-    const images = [
+    const heroImages = [
         '/handcare.JPG',
         '/50 care.jpg',
         '/physical therapy.JPG',
@@ -39,20 +49,23 @@ const SportsHomePage = () => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
         }, 5000); // Change image every 5 seconds
 
         return () => clearInterval(interval);
-    }, [images.length]);
+    }, [heroImages.length]);
 
     const heroBackgroundStyles = {
-        backgroundImage: `url(${images[currentImageIndex]})`,
+        backgroundImage: `url(${heroImages[currentImageIndex]})`,
         height: '400px',
         width: '100%',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         transition: 'background-image 1s ease-in-out',
     };
+
+  
+
 
 
  
@@ -214,9 +227,10 @@ const SportsHomePage = () => {
                 </div>
             </section>
 
-        <div className="container">
-            <section className="promo-section">
-                <div className="container">
+
+
+            <div className="container">
+                <section className="promo-section">
                     <div className="promo-content">
                         <div className="promo-text">
                             <h2>
@@ -226,51 +240,16 @@ const SportsHomePage = () => {
                         </div>
                     </div>
                     <div className="services-grid">
-                        <div className="service-container">
-                            <img src={process.env.PUBLIC_URL + '/elder lady home care.jpg'} alt="Personal Care" className="service-image" />
-                            <h3>Personal Care</h3>
-                            <Link to="/pages/personal-care">Read more</Link>
-                        </div>
-                        <div className="service-container">
-                            <img src={process.env.PUBLIC_URL + '/50 care.jpg'} alt="Medication Management" className="service-image" />
-                            <h3>Medication Management</h3>
-                            <Link to="/pages/MedicationManagementPage">Read more</Link>
-                        </div>
-                        <div className="service-container">
-                            <img src={process.env.PUBLIC_URL + '/physical therapy.jpg'} alt="in home Physical Therapy" className="service-image" />
-                            <h3>in home Physical Therapy</h3>
-                            <Link to="/pages/PhysicalTherapyPage">Read more</Link>
-                        </div>
-                        <div className="service-container">
-                            <img src={process.env.PUBLIC_URL + '/rehab.jpg'} alt="Rehabilitation and Therapy" className="service-image" />
-                            <h3>Rehabilitation and Therapy</h3>
-                            <Link to="/pages/RehabilitationTherapyPage">Read more</Link>
-                        </div>
-                        <div className="service-container">
-                            <img src={process.env.PUBLIC_URL + '/skill nursing.jpg'} alt="Skilled Nursing Care" className="service-image" />
-                            <h3>Skilled Nursing Care</h3>
-                            <Link to="/pages/SkilledNursingCarePage">Read more</Link>
-                        </div>
-                        <div className="service-container">
-                            <img src={process.env.PUBLIC_URL + '/eldercare.jpg'} alt="Elderly Care" className="service-image" />
-                            <h3>Elderly Care</h3>
-                            <Link to="/pages/ElderlyCarePage">Read more</Link>
-                        </div>
-                        <div className="service-container">
-                            <img src={process.env.PUBLIC_URL + '/companion.jpg'} alt="Companionship and Socialization" className="service-image" />
-                            <h3>Companionship and Socialization</h3>
-                            <Link to="/pages/CompanionshipPage">Read more</Link>
-                        </div>
-                        <div className="service-container">
-                            <img src={process.env.PUBLIC_URL + '/HouseKeeping.jpg'} alt="Companionship and Socialization" className="service-image" />
-                            <h3>Light housekeeping</h3>
-                            <Link to="/pages/LightHousekeepingPage">Read more</Link>
-                        </div>
+                        {serviceImages.map((image, index) => (
+                            <div className="service-container" key={index}>
+                                <img src={process.env.PUBLIC_URL + image} alt={`Service ${index + 1}`} className="service-image" />
+                                <h3>{['Personal Care', 'Medication Management', 'In Home Physical Therapy', 'Rehabilitation and Therapy', 'Skilled Nursing Care', 'Elderly Care', 'Companionship and Socialization', 'Light Housekeeping'][index]}</h3>
+                                <Link to={`/pages/${['personal-care', 'MedicationManagementPage', 'PhysicalTherapyPage', 'RehabilitationTherapyPage', 'SkilledNursingCarePage', 'ElderlyCarePage', 'CompanionshipPage', 'LightHousekeepingPage'][index]}`}>Read more</Link>
+                            </div>
+                        ))}
                     </div>
-                </div>
-            </section>
-        </div>
-
+                </section>
+            </div>
 
    {/* contact Section */}
  {/* Store Section */}
