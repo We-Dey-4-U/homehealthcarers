@@ -234,7 +234,7 @@ const PersonalCarePage = () => {
                             </ul>
                         </div>
                         <div className="about-us-image">
-                            <img src="/images/elder lady home care.jpg" alt="Personal Care Image" style={{ width: "100%", height: "auto", borderRadius: "8px" }} />
+                            <img src="/images/elder lady home care.JPG" alt="Personal Care Image" style={{ width: "100%", height: "auto", borderRadius: "8px" }} />
                             <figcaption>
     <strong>Why Choose Our Personal Care Services?</strong>
     <br />

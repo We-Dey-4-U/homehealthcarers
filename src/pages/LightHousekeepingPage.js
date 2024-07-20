@@ -153,7 +153,7 @@ const LightHousekeepingPage = () => {
                             </ul>
                         </div>
                         <div className="about-us-image">
-                            <img src="/HouseKeeping.jpg" alt="Light Housekeeping Image" style={{ width: "100%", height: "auto", borderRadius: "8px" }} />
+                            <img src="/HouseKeeping.JPG" alt="Light Housekeeping Image" style={{ width: "100%", height: "auto", borderRadius: "8px" }} />
                             <figcaption>
                                 <strong>Why Choose Our Light Housekeeping Services?</strong>
                                 <br />
