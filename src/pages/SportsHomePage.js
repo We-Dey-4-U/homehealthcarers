@@ -28,14 +28,14 @@ const SportsHomePage = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [serviceImages, setServiceImages] = useState([
-        '/elder lady home care.jpg',
+        '/images/elder lady home care.jpg',
         '/images/50 care.JPG',
-        '/physical therapy.jpg',
-        '/rehab.jpg',
-        '/skill nursing.jpg',
-        '/eldercare.jpg',
-        '/companion.jpg',
-        '/HouseKeeping.jpg'
+        '/images/physical therapy.jpg',
+        '/images/rehab.jpg',
+        '/images/skill nursing.jpg',
+        '/images/eldercare.jpg',
+        '/images/companion.jpg',
+        '/images/HouseKeeping.jpg'
     ]);
     const isSmallScreen = window.innerWidth <= 600;
 
