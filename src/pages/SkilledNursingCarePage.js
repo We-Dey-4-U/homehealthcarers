@@ -137,6 +137,7 @@ const SkilledNursingCarePage = () => {
             </div>
 
             <footer className="footer">
+                
                 {footerCategories.map(category => (
                     <div className="footer-column" key={category.id}>
                         <h2>{category.name}</h2>
@@ -151,41 +152,46 @@ const SkilledNursingCarePage = () => {
                         </ul>
                     </div>
                 ))}
-                <div className="footer-column social-media">
-                    <h2>Follow Us</h2>
-                    <div className="social-icons">
-                        <a href=""><FaFacebook /></a>
-                        <a href="#"><FaTwitter /></a>
-                        <a href=""><FaInstagram /></a>
-                    </div>
-                    <div className="logo">
-                        <img 
-                            src={process.env.PUBLIC_URL + '/logo.JPG'} 
-                            alt="Logo" 
-                            style={{ 
-                                width: '70px', 
-                                height: 'auto',
-                                borderRadius: '10px'  // Adjust the border radius as per your design
-                            }} 
-                        />
-                    </div>
-                </div>
-            </footer>
-
-            <div className="copyright">
-                <p>© 2015 home healthcare services. All rights reserved.</p>
-            </div>
-
-            <div className="whatsapp-container">
-                <div className="whatsapp-text-container">
-                    <span className="whatsapp-text">How can I help you?</span>
-                </div>
-                <button className="whatsapp-button" onClick={handleWhatsAppClick}>
-                    <FaWhatsapp />
-                </button>
-            </div>
+                 {/* Social media icons */}
+    <div className="footer-column social-media">
+        <h2>Follow Us</h2>
+        <div className="social-icons">
+            <a href=""><FaFacebook /></a>
+            <a href="#"><FaTwitter /></a>
+            <a href=""><FaInstagram /></a>
+            {/* Add more social media icons as needed */}
         </div>
+        <div className="logo">
+                    <img 
+                        src={process.env.PUBLIC_URL + '/logo.JPG'} 
+                        alt="Logo" 
+                        style={{ 
+                            width: '70px', 
+                            height: 'auto',
+                            borderRadius: '10px'  // Adjust the border radius as per your design
+                        }} 
+                    />
+                </div>
+    </div>
+    
+ </footer>
+
+<div className="copyright">
+    <p>© 2015 home healthcare services. All rights reserved.</p>
+</div>
+
+{/* WhatsApp button */}
+
+<div className="whatsapp-container">
+<div className="whatsapp-text-container">
+<span className="whatsapp-text">How can I help you ?</span>
+</div>
+    <button className="whatsapp-button" onClick={handleWhatsAppClick}>
+        <FaWhatsapp />
+    </button>
+    </div>  
+</div>
     );
-};
+}
 
 export default SkilledNursingCarePage;
