@@ -30,12 +30,12 @@ const SportsHomePage = () => {
     const [serviceImages, setServiceImages] = useState([
         '/images/elder lady home care.jpg',
         '/images/50 care.JPG',
-        '/images/physical therapy.jpg',
-        '/images/rehab.jpg',
-        '/images/skill nursing.jpg',
-        '/images/eldercare.jpg',
-        '/images/companion.jpg',
-        '/images/HouseKeeping.jpg'
+        '/images/physical therapy.JPG',
+        '/images/rehab.JPG',
+        '/images/skill nursing.JPG',
+        '/images/eldercare.JPG',
+        '/images/companion.JPG',
+        '/images/HouseKeeping.JPG'
     ]);
     const isSmallScreen = window.innerWidth <= 600;
 
