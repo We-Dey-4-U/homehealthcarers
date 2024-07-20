@@ -10,10 +10,10 @@ const MedicationManagementPage = () => {
 
     // List of background images for the slide effect
     const images = [
-        '/images/handcare.JPG',
-        '/images/50 care.JPG',
+        '/handcare.JPG',
+        '/50 care.JPG',
         '/images/physical therapy.JPG',
-        '/images/rehab.JPG'
+        '/rehab.JPG'
     ];
 
     useEffect(() => {

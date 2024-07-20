@@ -155,7 +155,7 @@ const PhysicalTherapyPage = () => {
                             </ul>
                         </div>
                         <div className="about-us-image">
-                            <img src="/physical therapy.jpg" alt="Physical Therapy Image" style={{ width: "100%", height: "auto", borderRadius: "8px" }} />
+                            <img src="/images/physical therapy.jpg" alt="Physical Therapy Image" style={{ width: "100%", height: "auto", borderRadius: "8px" }} />
                             <figcaption>
                                 <strong>Why Choose Our Physical Therapy Services?</strong>
                                 <br />

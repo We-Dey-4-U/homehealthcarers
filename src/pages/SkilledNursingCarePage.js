@@ -153,7 +153,7 @@ const SkilledNursingCarePage = () => {
                             </ul>
                         </div>
                         <div className="about-us-image">
-                            <img src="/skill nursing.jpg" alt="Skilled Nursing Care Image" style={{ width: "100%", height: "auto", borderRadius: "8px" }} />
+                            <img src="/images/skill nursing.jpg" alt="Skilled Nursing Care Image" style={{ width: "100%", height: "auto", borderRadius: "8px" }} />
                             <figcaption>
                                 <strong>Why Choose Our Skilled Nursing Care Services?</strong>
                                 <br />

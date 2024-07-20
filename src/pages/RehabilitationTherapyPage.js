@@ -152,7 +152,7 @@ const RehabilitationTherapyPage = () => {
                             </ul>
                         </div>
                         <div className="about-us-image">
-                            <img src="/rehab.jpg" alt="Rehabilitation and Therapy Image" style={{ width: "100%", height: "auto", borderRadius: "8px" }} />
+                            <img src="/images/rehab.jpg" alt="Rehabilitation and Therapy Image" style={{ width: "100%", height: "auto", borderRadius: "8px" }} />
                             <figcaption>
                                 <strong>Why Choose Our Rehabilitation and Therapy Services?</strong>
                                 <br />
