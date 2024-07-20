@@ -29,7 +29,7 @@ const SportsHomePage = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [serviceImages, setServiceImages] = useState([
         '/elder lady home care.jpg',
-        '/50 care.jpg',
+        '/images/50 care.JPG',
         '/physical therapy.jpg',
         '/rehab.jpg',
         '/skill nursing.jpg',
