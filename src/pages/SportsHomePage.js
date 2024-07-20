@@ -204,8 +204,8 @@ const SportsHomePage = () => {
         <section className="hero" style={heroBackgroundStyles}>
                 <div className="container">
                     <div className="content" style={{ color: 'white', marginBottom: '60px' }}>
-                        <h2>Experience the difference with our premium homecare services</h2>
-                        <p>Carefully crafted to deliver unparalleled peace of mind</p>
+                        <h2>Care and compassion in the comfort of your own home</h2>
+                        <p>Where love and support come to you</p>
                         <Link
                             to="/contact"
                             className="store-link"
@@ -221,6 +221,10 @@ const SportsHomePage = () => {
                                 transition: 'background-color 0.3s, color 0.3s',
                             }}
                         >
+                             <FaEnvelope
+                          className="contact-icon"
+                          style={{ marginRight: '10px' }}
+                        />
                             Contact Us
                         </Link>
                     </div>
