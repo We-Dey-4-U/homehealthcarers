@@ -13,10 +13,10 @@ import {
     FaFlag,
     FaWhatsapp,
     FaPhone,
-  } from 'react-icons/fa';
-  import { Link } from 'react-router-dom';
-  import './SportsHomePage.css'; // Import CSS file for styling
-  import '@fortawesome/fontawesome-free/css/all.css';
+} from 'react-icons/fa';
+import { Link } from 'react-router-dom'; // Correct import
+import './SportsHomePage.css'; // Import CSS file for styling
+import '@fortawesome/fontawesome-free/css/all.css';
   import axios from 'axios';
   import EventList from '../components/EventList';
   
@@ -100,93 +100,10 @@ const SportsHomePage = () => {
     // Define courses array with sample data
    
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const images = [
-        "/50 care.jpg",
-        "/handcare.jpg",
-        "/elder lady home care.jpg",
-       
-      
-    ]; // Add paths to your images
-
-
-    const [services, setServices] = useState([
-        {
-            id: 1,
-            title: ' Personal Care',
-            image: '/elder lady home care.jpg',
-            link: '/pages/personal-care'
-        },
-        {
-            id: 2,
-            title: 'Medication Management',
-            image: '/50 care.jpg',
-            link: '/pages/MedicationManagementPage'
-        },
-        {
-            id: 3,
-            title: 'in home Physical Therapy',
-            image: '/physical therapy.jpg',
-            link: '/pages/PhysicalTherapyPage'
-        },
-        {
-            id: 4,
-            title: ' Rehabilitation and Therapy',
-            image: '/rehab.jpg',
-            link: '/pages/RehabilitationTherapyPage'
-        },
-        {
-            id: 5,
-            title: 'Skilled Nursing Care',
-            image: '/skill nursing.jpg',
-            link: '/pages/SkilledNursingCarePage'
-        },
-        {
-            id: 6,
-            title: 'Elderly Care',
-            image: 'eldercare.jpg',
-            link: '/pages/ElderlyCarePage'
-        },
-        {
-            id: 7,
-            title: ' Companionship and Socialization',
-            image: '/companion.jpg',
-            link: '/pages/CompanionshipAndSocializationPage'
-        },
-        {
-            id: 8,
-            title: ' Light Housekeeping',
-            image: '/HouseKeeping.jpg',
-            link: '/pages/LightHousekeepingPage'
-        },
-        
-    ]);
-
+    const images = ["50 care.jpg", "handcare.jpg", "elder lady home care.jpg"];
    
-   
-   
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-        }, 5000); // Change image every 5 seconds
 
-        return () => clearInterval(interval);
-    }, []);
 
-    const handleCategoryClick = (category) => {
-        // Handle category click
-    };
-
-   
-    const [selectedCurrency, setSelectedCurrency] = useState('');
-    const [selectedCountry, setSelectedCountry] = useState('');
-
-    const handleCurrencyChange = (currency) => {
-        setSelectedCurrency(currency);
-    };
-
-    const handleCountryChange = (country) => {
-        setSelectedCountry(country);
-    };
 
     
     
@@ -244,75 +161,107 @@ const SportsHomePage = () => {
                     <input type="text" placeholder="Search..." />
                     <button><FaSearch /></button>
                 </div>
-
-                <div className="dropdown">
-                    <button className="dropbtn currency-btn">GBP</button>
-                    <div className="dropdown-content">
-                        <button className="dropdown-item" onClick={() => handleCurrencyChange('USD')}>
-                            <span className="item-icon">$</span> USD
-                        </button>
-                        <button className="dropdown-item" onClick={() => handleCurrencyChange('Euro')}>
-                            <span className="item-icon">€</span> Euro
-                        </button>
-                        <button className="dropdown-item" onClick={() => handleCurrencyChange('GBP')}>
-                            <span className="item-icon">£</span> GBP
-                        </button>
-                    </div>
-                </div>
-
-                <div className="dropdown">
-                    <button className="dropbtn country-btn">ENG</button>
-                    <div className="dropdown-content" width="200px">
-                        <button className="dropdown-item" onClick={() => handleCountryChange('USA 🇺🇸')}>
-                            <img className="item-icon" src="/eng flag.jpg" alt="flag" />
-                            <span>English</span>
-                        </button>
-                        <button className="dropdown-item" onClick={() => handleCountryChange('USA 🇺🇸')}>
-                            <img className="item-icon" src="/french.jpg" alt="flag" />
-                            <span>French</span>
-                        </button>
-                        <button className="dropdown-item" onClick={() => handleCountryChange('USA 🇺🇸')}>
-                            <img className="item-icon" src="/spanish.jpg" alt="flag" />
-                            <span>Spanish</span>
-                        </button>
-                        <button className="dropdown-item" onClick={() => handleCountryChange('USA 🇺🇸')}>
-                            <img className="item-icon" src="/italian.jpg" alt="flag" />
-                            <span>Italian</span>
-                        </button>
-                        <button className="dropdown-item" onClick={() => handleCountryChange('USA 🇺🇸')}>
-                            <img className="item-icon" src="/dutch.jpg" alt="flag" />
-                            <span>Dutch</span>
-                        </button>
-                    </div>
-                </div>
             </nav>
 
-            <div className="hero" style={{ position: "relative" }}>
-                <img src={images[currentImageIndex]} alt="Hero Image" style={{ width: "100%", height: "400px", objectFit: "cover" }} />
-                <div className="hero-text" style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}>
-                </div>
-            </div>
+
+
+
+
+     <div className="hero" style={{ position: "relative" }}>
+      {currentImageIndex === 0 && (
+        <img
+          src="/50 care.jpg"
+          alt="Hero Image"
+          style={{ width: "100%", height: "400px", objectFit: "cover" }}
+        />
+      )}
+      {currentImageIndex === 1 && (
+        <img
+          src="/handcare.jpg"
+          alt="Hero Image"
+          style={{ width: "100%", height: "400px", objectFit: "cover" }}
+        />
+      )}
+      {currentImageIndex === 2 && (
+        <img
+          src="/elder lady home care.jpg"
+          alt="Hero Image"
+          style={{ width: "100%", height: "400px", objectFit: "cover" }}
+        />
+      )}
+      <div
+        className="hero-text"
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+        }}
+      >
+        {/* Add any text or content you want to overlay here */}
+      </div>
+    </div>
+
+
+
 
             <div className="container">
                 <section className="promo-section">
                     <div className="container">
                         <div className="promo-content">
                             <div className="promo-text">
-                                <h2>At our homecare services agency, we offer exceptional, personalized services designed to provide you with the peace of mind you deserve</h2>
+                                <h2>
+                                    At our homecare services agency, we offer exceptional, personalized services designed to
+                                    provide you with the peace of mind you deserve
+                                </h2>
                             </div>
                         </div>
                         <div className="services-grid">
-                            {services.map(service => (
-                                <div key={service.id} className="service-container">
-                                    <img src={service.image} alt={service.title} className="service-image" />
-                                    <h3>{service.title}</h3>
-                                    <a href={service.link}>Read more</a>
-                                </div>
-                            ))}
+                            <div className="service-container">
+                                <img src="/elder lady home care.jpg" alt="Personal Care" className="service-image" />
+                                <h3>Personal Care</h3>
+                                <Link to="/pages/personal-care">Read more</Link>
+                            </div>
+                            <div className="service-container">
+                                <img src="/50 care.jpg" alt="Medication Management" className="service-image" />
+                                <h3>Medication Management</h3>
+                                <Link to="/pages/MedicationManagementPage">Read more</Link>
+                            </div>
+                            <div className="service-container">
+                                <img src="/physical therapy.jpg" alt="in home Physical Therapy" className="service-image" />
+                                <h3>in home Physical Therapy</h3>
+                                <Link to="/pages/PhysicalTherapyPage">Read more</Link>
+                            </div>
+                            <div className="service-container">
+                                <img src="/rehab.jpg" alt="Rehabilitation and Therapy" className="service-image" />
+                                <h3>Rehabilitation and Therapy</h3>
+                                <Link to="/pages/RehabilitationTherapyPage">Read more</Link>
+                            </div>
+                            <div className="service-container">
+                                <img src="/skill nursing.jpg" alt="Skilled Nursing Care" className="service-image" />
+                                <h3>Skilled Nursing Care</h3>
+                                <Link to="/pages/SkilledNursingCarePage">Read more</Link>
+                            </div>
+                            <div className="service-container">
+                                <img src="eldercare.jpg" alt="Elderly Care" className="service-image" />
+                                <h3>Elderly Care</h3>
+                                <Link to="/pages/ElderlyCarePage">Read more</Link>
+                            </div>
+                            <div className="service-container">
+                                <img src="/companion.jpg" alt="Companionship and Socialization" className="service-image" />
+                                <h3>Companionship and Socialization</h3>
+                                <Link to="/pages/CompanionshipPage">Read more</Link>
+                            </div>
+                            <div className="service-container">
+                                <img src="/HouseKeeping.jpg" alt="Companionship and Socialization" className="service-image" />
+                                <h3>Light housekeeping</h3>
+                                <Link to="/pages/LightHousekeepingPage">Read more</Link>
+                            </div>
                         </div>
                     </div>
                 </section>
             </div>
+
 
 
    {/* contact Section */}

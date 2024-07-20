@@ -30,14 +30,14 @@ const App = () => {
           <Route path="/contact" element={<ContactPage />} /> 
           <Route path="/events" element={<EventList />} /> {/* Add route for EventList */}
           <Route path="/about-us" element={<AboutUsPage />} />
-          <Route path="/services/personal-care" element={<PersonalCarePage />} />
-          <Route path="/services/MedicationManagementPage" element={<MedicationManagementPage />} />
-          <Route path="/services/PhysicalTherapyPage" element={<PhysicalTherapyPage />} />
-          <Route path="/services/RehabilitationTherapyPage" element={<RehabilitationTherapyPage />} />
-          <Route path="/services/SkilledNursingCarePage" element={<SkilledNursingCarePage/>} />
-          <Route path="/services/ElderlyCarePage" element={<ElderlyCarePage/>} />
-          <Route path="/services/CompanionshipAndSocializationPage" element={<CompanionshipAndSocializationPage/>} />
-          <Route path="/services/LightHousekeepingPage" element={<LightHousekeepingPage/>} />
+          <Route path="/pages/personal-care" element={<PersonalCarePage />} />
+          <Route path="/pages/MedicationManagementPage" element={<MedicationManagementPage />} />
+          <Route path="/pages/PhysicalTherapyPage" element={<PhysicalTherapyPage />} />
+          <Route path="/pages/RehabilitationTherapyPage" element={<RehabilitationTherapyPage />} />
+          <Route path="/pages/SkilledNursingCarePage" element={<SkilledNursingCarePage/>} />
+          <Route path="/pages/ElderlyCarePage" element={<ElderlyCarePage/>} />
+          <Route path="/pages/CompanionshipAndSocializationPage" element={<CompanionshipAndSocializationPage/>} />
+          <Route path="/pages/LightHousekeepingPage" element={<LightHousekeepingPage/>} />
         </Routes>
       </div>
     </Router>

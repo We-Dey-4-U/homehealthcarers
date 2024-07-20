@@ -6,7 +6,7 @@ import axios from 'axios';
 const ElderlyCarePage = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const images = ["elderlycare1.jpg", "elderlycare2.jpg", "elderlycare3.jpg"]; // Add paths to your images
+    const images = ["50 care.jpg", "handcare.jpg", "elder lady home care.jpg"]; // Add paths to your images
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -56,6 +56,9 @@ const ElderlyCarePage = () => {
                 console.error('Error:', error);
             });
     };
+
+
+
 
     return (
         <div className="elderly-care-page">

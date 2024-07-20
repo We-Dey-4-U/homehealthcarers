@@ -80,11 +80,39 @@ const AboutUsPage = () => {
             </nav>
 
             <div className="hero" style={{ position: "relative" }}>
-                <img src={images[currentImageIndex]} alt="Hero Image" style={{ width: "100%", height: "400px", objectFit: "cover" }} />
-                <div className="hero-text" style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}>
-                    {/* <h1>Welcome to My Portfolio</h1> */}
-                </div>
-            </div>
+      {currentImageIndex === 0 && (
+        <img
+          src="/50 care.jpg"
+          alt="Hero Image"
+          style={{ width: "100%", height: "400px", objectFit: "cover" }}
+        />
+      )}
+      {currentImageIndex === 1 && (
+        <img
+          src="/handcare.jpg"
+          alt="Hero Image"
+          style={{ width: "100%", height: "400px", objectFit: "cover" }}
+        />
+      )}
+      {currentImageIndex === 2 && (
+        <img
+          src="/elder lady home care.jpg"
+          alt="Hero Image"
+          style={{ width: "100%", height: "400px", objectFit: "cover" }}
+        />
+      )}
+      <div
+        className="hero-text"
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+        }}
+      >
+        {/* Add any text or content you want to overlay here */}
+      </div>
+    </div>
 
             <div className="about-us-section">
                 <div className="container">

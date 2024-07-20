@@ -6,7 +6,7 @@ import axios from 'axios';
 const RehabilitationTherapyPage = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const images = ["rehab1.jpg", "rehab2.jpg", "rehab3.jpg"]; // Add paths to your images
+    const images = ["50 care.jpg", "handcare.jpg", "elder lady home care.jpg"];// Add paths to your images
 
     useEffect(() => {
         const interval = setInterval(() => {
