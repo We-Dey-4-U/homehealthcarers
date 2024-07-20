@@ -1,11 +1,11 @@
-/* Resetting default styles */
-* {
+
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+  }
 
-body {
+body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -49,12 +49,12 @@ body {
 .menu-links a {
     color: #fff;
     text-decoration: none;
-    font-size: 1rem;
-    margin: 10px 0;
-    text-align: center;
+    font-size: 1rem; /* Adjust font size as needed */
+    margin: 10px 0; /* Adjust spacing between links */
+    text-align: center; /* Center align links in mobile view */
 }
 
-/* Search and Cart styles */
+
 .search {
     display: flex;
     align-items: center;
@@ -69,6 +69,7 @@ body {
     border: none;
     flex: 1;
 }
+
 
 .search button {
     background-color: #007bff;
@@ -210,246 +211,162 @@ body {
     }
 }
 
-/* Article section */
-.home-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 20px;
-    padding: 20px;
+
+
+
+
+
+
+
+
+
+
+
+/* Adjust hero section styling if necessary */
+.hero {
+    position: relative;
+    z-index: 1; /* Lower than the navbar */
+    object-fit: cover;
 }
 
-.section {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-bottom: 2px;
-    margin-top: 50px;
+.hero img {
+    width: 100%;
+    height: 200px;
 }
 
-.section h2 {
-    font-size: 15px;
-    color: #4caf50;
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* Ensure text is visible on top of the image */
+    text-align: center; /* Center align the text */
 }
 
-.section p {
-    margin-top: 10px;
-}
+/* Search and Cart styles */
 
-.section p:last-child {
-    margin-bottom: 0;
-}
 
-/* Promo section */
-.promo-section {
-    background-color: white;
-    padding: 50px 0;
-}
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
 
-.promo-content {
+/* Search and Cart styles */
+.search {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 300px; /* Adjust width as needed */
 }
 
-.promo-text {
-    text-align: center;
-    margin-bottom: 20px;
+.search input[type="text"] {
+    padding: 0.5rem;
+    border: none;
+    flex: 1;
 }
 
-.promo-text h2 {
-    margin-bottom: 20px;
+.search button {
+    background-color: #007bff;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    transition: background-color 0.3s ease;
 }
 
-.promo-buttons {
-    display: flex;
-    gap: 20px;
+.search button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
 }
 
-.btn {
-    padding: 15px 40px;
-    background-color: #03083e;
+
+
+
+.cart button {
+    background-color: transparent;
     color: #fff;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-}
-
-/* Popular Courses section */
-.products {
-    margin-top: 5rem;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 20px;
-}
-
-.products_container {
     display: flex;
-    justify-content: space-between;
-    margin: auto;
-    max-width: 1200px;
-    padding: 0 20px;
-    height: 550px;
+    align-items: center;
+    margin-right: 70px; /* Adjust margin-right as needed */
+    font-size: 20px;
 }
 
-.product {
-    flex: 1;
-    background: var(--color-bg1);
-    text-align: center;
-    border: 3px solid transparent;
-    margin: 0 10px;
+.cart button:hover {
+    text-decoration: underline; /* Underline button on hover */
 }
 
-.product:hover {
-    background: transparent;
-    border: var(--color-primary);
-    transition: var(--transition);
-}
-
-.product_info {
-    padding: 2rem;
-}
-
-.product_info p {
-    margin: 1.2rem 0 2rem;
-    font-size: 0.9rem;
-}
-
-.product_image img {
-    max-width: 100%;
-    height: auto;
-}
-
-.product:first-child {
-    margin-left: 10rem;
-}
-
-.product:last-child {
-    margin-right: 10rem;
-}
-
-.product_info .btn {
-    background-color: #03083e;
-    color: white;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    bottom: 9rem;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.product_info .btn:hover {
-    background-color: var(--color-primary-dark);
-}
-
-.product:nth-child(odd) {
-    background-color: white;
-}
-
-.product:nth-child(even) {
-    background-color: #f3f3f3;
-}
-
+/* Media query for smaller screens */
 @media (max-width: 768px) {
-    .products {
-        margin-top: 3rem;
-        padding: 0 10px;
+    .search {
+        display: none; /* Hide search bar for mobile screens */
     }
-    .products_container {
-        flex-direction: column;
-        height: auto;
+    .menu-icon {
+        display: block; /* Show menu icon for mobile */
+        cursor: pointer;
     }
-    .product {
-        margin: 10px 0;
+
+    .menu-links {
+        display: none; /* Hide links for mobile */
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        padding: 10px 0;
     }
-    .product:first-child,
-    .product:last-child {
-        margin-left: auto;
-        margin-right: auto;
+
+    .menu-links.active {
+        display: flex; /* Show links when menu is active */
     }
 }
 
-/* Sports Home Page */
-.how-it-works {
-    text-align: center;
-    margin-top: 5rem;
-    padding: 0 20px;
-}
+/* Media query for larger screens */
+@media (min-width: 769px) {
+    .menu-icon {
+        display: none; /* Hide menu icon for larger screens */
+    }
 
-.icon-grid {
-    display: flex;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 200px;
-    justify-content: center;
-    margin-top: 2rem;
-}
-
-.icon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.icon svg {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.icon p {
-    font-size: 1.2rem;
-}
-
-.promo-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2rem;
-}
-
-.btn {
-    padding: 1rem 2.5rem;
-    margin: 0 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    color: white;
-    background-color: #03083e;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #0056b3;
+    .menu-links {
+        display: flex; /* Show links for larger screens */
+    }
 }
 
 
 
+@media (max-width: 300px) {
+    .search {
+        display: none; /* Hide search bar for mobile screens */
+    }
+    .menu-icon {
+        display: block; /* Show menu icon for mobile */
+        cursor: pointer;
+    }
 
+    .menu-links {
+        display: none; /* Hide links for mobile */
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        padding: 10px 0;
+    }
 
+    .menu-links.active {
+        display: flex; /* Show links when menu is active */
+    }
+}
 
+/* Media query for larger screens */
+@media (min-width: 300px) {
+    .menu-icon {
+        display: none; /* Hide menu icon for larger screens */
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
+    .menu-links {
+        display: flex; /* Show links for larger screens */
+    }
+}
 
 
 
@@ -1428,138 +1345,3 @@ body {
         margin-bottom: 20px;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.eventCountdown {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: #ff4500; /* Orange background color */
-    padding: 10px;
-    border-radius: 20px; /* Rounded border */
-    margin-top: 10px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Box shadow for depth */
-    transition: all 0.3s ease-in-out; /* Smooth transition */
-}
-
-.eventCountdown:hover {
-    transform: translateY(-2px); /* Lift the countdown on hover */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.12); /* Increase shadow on hover */
-}
-
-
-
-.store-link {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 50%);
-}
-
-.store-link:hover {
-    background-color: #0056b3;
-}
-
-
-.store-section {
-    /* Your existing styles */
-    position: relative; /* Ensure relative positioning for absolute positioning of the button */
-}
-
-.store-content {
-    /* New style to center the button vertically and horizontally */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%; /* Ensure the content takes up the full height of the banner */
-    text-align: center; /* Center-align the text content */
-    /* Add top padding to push content down */
-    margin-top: 100px;
-}
-
-.store-link {
-    /* Your existing styles */
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.store-link:hover {
-    background-color: #0056b3;
-}
-
-
-
-@media (max-width: 768px) {
-    .store-section {
-      height: auto; /* Set the height to auto for smaller screens */
-      padding: 10px; /* Adjust padding for smaller screens */
-      margin-top: 3rem;
-      padding: 0 10px;
-    }
-  }
-
-
-  
-@media (max-width: 300px) {
-    .store-section {
-      height: auto; /* Set the height to auto for smaller screens */
-      padding: 10px; /* Adjust padding for smaller screens */
-      margin-top: 3rem;
-      padding: 0 10px;
-    }
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
