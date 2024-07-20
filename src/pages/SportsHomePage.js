@@ -10,7 +10,6 @@ import {
     FaLinkedin,
     FaYoutube,
     FaBars,
-    FaPoundSign,
     FaFlag,
     FaWhatsapp,
     FaPhone,

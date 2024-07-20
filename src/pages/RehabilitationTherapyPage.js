@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { FaSearch, FaBars, FaFacebook, FaTwitter, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { FaSearch, FaBars, FaFacebook, FaTwitter, FaInstagram, FaPhone, FaWhatsapp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-const CompanionshipAndSocializationPage = () => {
+const RehabilitationTherapyPage = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const images = ["companionship1.jpg", "companionship2.jpg", "companionship3.jpg"]; // Add paths to your images
+    const images = ["rehab1.jpg", "rehab2.jpg", "rehab3.jpg"]; // Add paths to your images
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -58,7 +58,7 @@ const CompanionshipAndSocializationPage = () => {
     };
 
     return (
-        <div className="companionship-and-socialization-page">
+        <div className="rehabilitation-therapy-page">
             <nav className="navbar">
                 <div className="logo">
                     <img src={process.env.PUBLIC_URL + '/logo.JPG'} alt="Logo" style={{ width: '70px', height: 'auto', borderRadius: '10px' }} />
@@ -82,7 +82,7 @@ const CompanionshipAndSocializationPage = () => {
             <div className="hero" style={{ position: "relative" }}>
                 <img src={images[currentImageIndex]} alt="Hero Image" style={{ width: "100%", height: "400px", objectFit: "cover" }} />
                 <div className="hero-text" style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}>
-                    {/* <h1>Companionship and Socialization Services</h1> */}
+                    {/* <h1>Welcome to Our Rehabilitation and Therapy Services</h1> */}
                 </div>
             </div>
 
@@ -90,29 +90,29 @@ const CompanionshipAndSocializationPage = () => {
                 <div className="container">
                     <div className="about-us-content">
                         <div className="about-us-text">
-                            <h2>Companionship and Socialization</h2>
-                            <p>Our Companionship and Socialization services include:</p>
+                            <h2>Rehabilitation and Therapy</h2>
+                            <p>Our Rehabilitation and Therapy services include:</p>
                             <ul>
-                                <li>Personalized companionship for emotional support</li>
-                                <li>Engaging in meaningful conversations and activities</li>
-                                <li>Participating in social outings and events</li>
-                                <li>Providing cognitive stimulation and mental engagement</li>
+                                <li>Comprehensive rehabilitation programs</li>
+                                <li>Individualized therapy plans for various conditions</li>
+                                <li>Support for recovery from surgery or injury</li>
+                                <li>Therapeutic exercises and activities</li>
                             </ul>
                         </div>
                         <div className="about-us-image">
-                            <img src="/companion.jpg" alt="Companionship and Socialization Image" style={{ width: "100%", height: "auto", borderRadius: "8px" }} />
+                            <img src="/rehab.jpg" alt="Rehabilitation and Therapy Image" style={{ width: "100%", height: "auto", borderRadius: "8px" }} />
                             <figcaption>
-                                <strong>Why Choose Our Companionship and Socialization Services?</strong>
+                                <strong>Why Choose Our Rehabilitation and Therapy Services?</strong>
                                 <br />
-                                - Tailored companionship programs to meet individual needs
+                                - Tailored rehabilitation programs designed for effective recovery
                                 <br />
-                                - Friendly and engaging caregivers who promote social interaction
+                                - Expert therapists providing personalized care and support
                                 <br />
-                                - Activities designed to stimulate mental and emotional well-being
+                                - Advanced techniques and equipment for optimal results
                                 <br />
-                                - Opportunities for socialization through planned outings and events
+                                - Continuous monitoring and adjustment of therapy plans
                                 <br />
-                                - Supportive environment that fosters connection and engagement
+                                - Compassionate and dedicated team focused on your progress
                             </figcaption>
                         </div>
                     </div>
@@ -171,4 +171,4 @@ const CompanionshipAndSocializationPage = () => {
     );
 };
 
-export default CompanionshipAndSocializationPage;
+export default RehabilitationTherapyPage;

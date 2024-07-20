@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { FaSearch, FaBars, FaFacebook, FaTwitter, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { FaSearch, FaBars, FaFacebook, FaTwitter, FaInstagram, FaPhone, FaWhatsapp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-const CompanionshipAndSocializationPage = () => {
+const PersonalCarePage = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const images = ["companionship1.jpg", "companionship2.jpg", "companionship3.jpg"]; // Add paths to your images
+    const images = ["50 care.jpg", "handcare.jpg", "elder lady home care.jpg"]; // Add paths to your images
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -24,7 +24,7 @@ const CompanionshipAndSocializationPage = () => {
         { name: 'Home', id: 1, link: '/' },
         { name: 'About Us', id: 4, link: '/about-us' },
         { name: 'Services', id: 2, link: '/services' },
-        { name: 'Blog', id: 3, link: '/blog' },
+        { name: 'blog', id: 3, link: '/blog' },
         { name: 'Contact Us', id: 5, link: '/contact' },
     ];
 
@@ -42,7 +42,7 @@ const CompanionshipAndSocializationPage = () => {
         {
             name: 'Quick Link',
             id: 7,
-            dropdownItems: ['About Us', 'Services', 'Collections']
+            dropdownItems: ['About us', 'Services', 'Collections']
         }
     ];
 
@@ -58,7 +58,7 @@ const CompanionshipAndSocializationPage = () => {
     };
 
     return (
-        <div className="companionship-and-socialization-page">
+        <div className="personal-care-page">
             <nav className="navbar">
                 <div className="logo">
                     <img src={process.env.PUBLIC_URL + '/logo.JPG'} alt="Logo" style={{ width: '70px', height: 'auto', borderRadius: '10px' }} />
@@ -82,7 +82,7 @@ const CompanionshipAndSocializationPage = () => {
             <div className="hero" style={{ position: "relative" }}>
                 <img src={images[currentImageIndex]} alt="Hero Image" style={{ width: "100%", height: "400px", objectFit: "cover" }} />
                 <div className="hero-text" style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}>
-                    {/* <h1>Companionship and Socialization Services</h1> */}
+                    {/* <h1>Welcome to My Portfolio</h1> */}
                 </div>
             </div>
 
@@ -90,30 +90,30 @@ const CompanionshipAndSocializationPage = () => {
                 <div className="container">
                     <div className="about-us-content">
                         <div className="about-us-text">
-                            <h2>Companionship and Socialization</h2>
-                            <p>Our Companionship and Socialization services include:</p>
+                            <h2>Personal Care</h2>
+                            <p>Our Personal Care services include:</p>
                             <ul>
-                                <li>Personalized companionship for emotional support</li>
-                                <li>Engaging in meaningful conversations and activities</li>
-                                <li>Participating in social outings and events</li>
-                                <li>Providing cognitive stimulation and mental engagement</li>
+                                <li>Bathing and grooming</li>
+                                <li>Dressing and undressing</li>
+                                <li>Toileting and incontinence care</li>
+                                <li>Transferring and mobility assistance</li>
                             </ul>
                         </div>
                         <div className="about-us-image">
-                            <img src="/companion.jpg" alt="Companionship and Socialization Image" style={{ width: "100%", height: "auto", borderRadius: "8px" }} />
+                            <img src="/elder lady home care.jpg" alt="Personal Care Image" style={{ width: "100%", height: "auto", borderRadius: "8px" }} />
                             <figcaption>
-                                <strong>Why Choose Our Companionship and Socialization Services?</strong>
-                                <br />
-                                - Tailored companionship programs to meet individual needs
-                                <br />
-                                - Friendly and engaging caregivers who promote social interaction
-                                <br />
-                                - Activities designed to stimulate mental and emotional well-being
-                                <br />
-                                - Opportunities for socialization through planned outings and events
-                                <br />
-                                - Supportive environment that fosters connection and engagement
-                            </figcaption>
+    <strong>Why Choose Our Personal Care Services?</strong>
+    <br />
+    - Customized care plans designed to meet your individual needs
+    <br />
+    - Convenient scheduling options and competitive pricing
+    <br />
+    - Expert caregivers with ongoing training and support
+    <br />
+    - Commitment to continuous improvement and quality assurance
+    <br />
+    - Empathetic and attentive customer support
+</figcaption>
                         </div>
                     </div>
                 </div>
@@ -171,4 +171,4 @@ const CompanionshipAndSocializationPage = () => {
     );
 };
 
-export default CompanionshipAndSocializationPage;
+export default PersonalCarePage;

@@ -4,14 +4,14 @@ import EventList from './components/EventList'; // Import EventList component
 import ContactPage from './pages/ContactPage'; 
 import SportsHomePage from './pages/SportsHomePage';
 import AboutUsPage from './pages/AboutUsPage'; // Make sure to update the import path if needed
-import PersonalCarePage from './services/PersonalCarePage';
-import MedicationManagementPage from './services/MedicationManagementPage';
-import PhysicalTherapyPage from './services/PhysicalTherapyPage';
-import RehabilitationTherapyPage from './services/RehabilitationTherapyPage';
-import SkilledNursingCarePage from './services/SkilledNursingCarePage';
-import ElderlyCarePage from './services/ElderlyCarePage';
-import CompanionshipAndSocializationPage from './services/CompanionshipAndSocializationPage';
-import LightHousekeepingPage from './services/LightHousekeepingPage';
+import PersonalCarePage from './pages/PersonalCarePage';
+import MedicationManagementPage from './pages/MedicationManagementPage';
+import PhysicalTherapyPage from './pages/PhysicalTherapyPage';
+import RehabilitationTherapyPage from './pages/RehabilitationTherapyPage';
+import SkilledNursingCarePage from './pages/SkilledNursingCarePage';
+import ElderlyCarePage from './pages/ElderlyCarePage';
+import CompanionshipAndSocializationPage from './pages/CompanionshipAndSocializationPage';
+import LightHousekeepingPage from './pages/LightHousekeepingPage';
 
 
 
