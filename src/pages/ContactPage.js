@@ -9,7 +9,15 @@ import axios from 'axios';
 const ContactFormPage = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const images = ["50 care.jpg", "handcare.jpg", "elder lady home care.jpg"]; // Add paths to your images
+    const isSmallScreen = window.innerWidth <= 600;
+
+    // List of background images for the slide effect
+    const images = [
+        '/handcare.JPG',
+        '/50 care.jpg',
+        '/physical therapy.JPG',
+        '/rehab.JPG'
+    ];
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -17,7 +25,16 @@ const ContactFormPage = () => {
         }, 5000); // Change image every 5 seconds
 
         return () => clearInterval(interval);
-    }, []);
+    }, [images.length]);
+
+    const heroBackgroundStyles = {
+        backgroundImage: `url(${images[currentImageIndex]})`,
+        height: '400px',
+        width: '100%',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        transition: 'background-image 1s ease-in-out',
+    };
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -82,43 +99,36 @@ const ContactFormPage = () => {
                 </div>
             </nav>
 
-            <div className="hero" style={{ position: "relative" }}>
-      {currentImageIndex === 0 && (
-        <img
-          src="/50 care.jpg"
-          alt="Hero Image"
-          style={{ width: "100%", height: "400px", objectFit: "cover" }}
-        />
-      )}
-      {currentImageIndex === 1 && (
-        <img
-          src="/handcare.jpg"
-          alt="Hero Image"
-          style={{ width: "100%", height: "400px", objectFit: "cover" }}
-        />
-      )}
-      {currentImageIndex === 2 && (
-        <img
-          src="/elder lady home care.jpg"
-          alt="Hero Image"
-          style={{ width: "100%", height: "400px", objectFit: "cover" }}
-        />
-      )}
-      <div
-        className="hero-text"
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-        }}
-      >
-        {/* Add any text or content you want to overlay here */}
-      </div>
-    </div>
+
+            
+
+            <section className="hero" style={heroBackgroundStyles}>
+                <div className="container">
+                    <div className="content" style={{ color: 'white', marginBottom: '60px' }}>
+                        <h2>Experience the difference with our premium homecare services</h2>
+                        <p>Carefully crafted to deliver unparalleled peace of mind</p>
+                        <Link
+                            to="/contact"
+                            className="store-link"
+                            style={{
+                                display: 'inline-block',
+                                padding: '10px 20px',
+                                fontSize: isSmallScreen ? '20px' : '35px',
+                                color: 'white',
+                                backgroundColor: 'transparent',
+                                border: '2px solid white',
+                                borderRadius: '5px',
+                                textDecoration: 'none',
+                                transition: 'background-color 0.3s, color 0.3s',
+                            }}
+                        >
+                            Contact Us
+                        </Link>
+                    </div>
+                </div>
+            </section>
 
 
-    
 
             <div className="contact-section">
                 <div className="container">
