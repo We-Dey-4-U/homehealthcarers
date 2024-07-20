@@ -10,10 +10,10 @@ const ElderlyCarePage = () => {
 
     // List of background images for the slide effect
     const images = [
-        '/handcare.JPG',
-        '/50 care.jpg',
-        '/physical therapy.JPG',
-        '/rehab.JPG'
+        '/images/handcare.JPG',
+        '/images/50 care.JPG',
+        '/images/physical therapy.JPG',
+        '/images/rehab.JPG'
     ];
 
     useEffect(() => {
@@ -157,7 +157,7 @@ const ElderlyCarePage = () => {
                             </ul>
                         </div>
                         <div className="about-us-image">
-                            <img src="/eldercare.jpg" alt="Elderly Care Image" style={{ width: "100%", height: "auto", borderRadius: "8px" }} />
+                            <img src="/images/eldercare.JPG" alt="Elderly Care Image" style={{ width: "100%", height: "auto", borderRadius: "8px" }} />
                             <figcaption>
                                 <strong>Why Choose Our Elderly Care Services?</strong>
                                 <br />

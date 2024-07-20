@@ -10,10 +10,10 @@ const CompanionshipAndSocializationPage = () => {
 
     // List of background images for the slide effect
     const images = [
-        '/handcare.JPG',
-        '/50 care.jpg',
-        '/physical therapy.JPG',
-        '/rehab.JPG'
+        '/images/handcare.JPG',
+        '/images/50 care.JPG',
+        '/images/physical therapy.JPG',
+        '/images/rehab.JPG'
     ];
 
     useEffect(() => {

@@ -10,10 +10,10 @@ const MedicationManagementPage = () => {
 
     // List of background images for the slide effect
     const images = [
-        '/handcare.JPG',
-        '/50 care.jpg',
-        '/physical therapy.JPG',
-        '/rehab.JPG'
+        '/images/handcare.JPG',
+        '/images/50 care.JPG',
+        '/images/physical therapy.JPG',
+        '/images/rehab.JPG'
     ];
 
     useEffect(() => {
@@ -152,7 +152,7 @@ const MedicationManagementPage = () => {
                             </ul>
                         </div>
                         <div className="about-us-image">
-                            <img src="/50 care.jpg" alt="Medication Management Image" style={{ width: "100%", height: "auto", borderRadius: "8px" }} />
+                            <img src="/images/50 care.JPG" alt="Medication Management Image" style={{ width: "100%", height: "auto", borderRadius: "8px" }} />
                             <figcaption>
                                 <strong>Why Choose Our Medication Management Services?</strong>
                                 <br />
