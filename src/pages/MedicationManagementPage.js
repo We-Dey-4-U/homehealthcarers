@@ -58,26 +58,43 @@ const MedicationManagementPage = () => {
     };
 
     return (
-        <div className="medication-management-page">
+        <div className="homepage">
             <nav className="navbar">
                 <div className="logo">
-                    <img src={process.env.PUBLIC_URL + '/logo.JPG'} alt="Logo" style={{ width: '70px', height: 'auto', borderRadius: '10px' }} />
+                    <img
+                        src={process.env.PUBLIC_URL + '/logo.JPG'}
+                        alt="Logo"
+                        style={{
+                            width: '70px',
+                            height: 'auto',
+                            borderRadius: '10px'
+                        }}
+                    />
                 </div>
+
                 <div className="menu-icon" onClick={toggleMenu}>
                     <FaBars />
                 </div>
+
                 <div className={`menu-links ${isMenuOpen ? 'active' : ''}`}>
                     {categories.map(category => (
-                        <Link key={category.id} to={category.link} onClick={toggleMenu} className="nav-link">
+                        <Link
+                            key={category.id}
+                            to={category.link}
+                            onClick={toggleMenu}
+                            className="nav-link"
+                        >
                             {category.name}
                         </Link>
                     ))}
                 </div>
+
                 <div className="search">
                     <input type="text" placeholder="Search..." />
                     <button><FaSearch /></button>
                 </div>
             </nav>
+
 
             <div className="hero" style={{ position: "relative" }}>
                 <img src={images[currentImageIndex]} alt="Hero Image" style={{ width: "100%", height: "400px", objectFit: "cover" }} />
