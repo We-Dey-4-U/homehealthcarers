@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Payslip.css'; // Import the CSS file
+import jsPDF from 'jspdf';
 
 const Payslip = () => {
   // State variables
@@ -69,6 +70,58 @@ const Payslip = () => {
     monthlyAccrual,
     monthlyAdjustmentRefund
   } = calculateDeductions();
+
+  const generatePayslipPDF = () => {
+    const doc = new jsPDF();
+    // Add content to PDF
+    doc.text(`Employee ID: ${employeeId}`, 10, 10);
+    doc.text(`Employee Name: ${employeeName}`, 10, 20);
+    doc.text(`Slip Date: ${slipDate}`, 10, 30);
+    doc.text(`Gross Income: ₦${grossIncome.toFixed(2)}`, 10, 40);
+    doc.text(`Monthly PAYE: ₦${monthlyPaye.toFixed(2)}`, 10, 50);
+    doc.text(`Monthly Pension: ₦${monthlyPension.toFixed(2)}`, 10, 60);
+    doc.text(`Monthly Housing Allowance: ₦${monthlyHousingAllowance.toFixed(2)}`, 10, 70);
+    doc.text(`Monthly Staff Purchase: ₦${monthlyStaffPurchase.toFixed(2)}`, 10, 80);
+    doc.text(`Monthly Commission: ₦${monthlyCommission.toFixed(2)}`, 10, 90);
+    doc.text(`Monthly Accrual: ₦${monthlyAccrual.toFixed(2)}`, 10, 100);
+    doc.text(`Monthly Adjustment/Refund: ₦${monthlyAdjustmentRefund.toFixed(2)}`, 10, 110);
+    doc.text(`Total Monthly Deductions: ₦${totalMonthlyDeduction.toFixed(2)}`, 10, 120);
+    doc.text(`Monthly Take Home: ₦${monthlyTakeHome.toFixed(2)}`, 10, 130);
+    doc.text(`Yearly Gross Income: ₦${yearlyGrossIncome.toFixed(2)}`, 10, 140);
+    doc.text(`Yearly PAYE: ₦${yearlyPaye.toFixed(2)}`, 10, 150);
+    doc.text(`Yearly Pension: ₦${yearlyPension.toFixed(2)}`, 10, 160);
+    doc.text(`Total Yearly Deductions: ₦${totalYearlyDeduction.toFixed(2)}`, 10, 170);
+    doc.text(`Yearly Take Home: ₦${yearlyTakeHome.toFixed(2)}`, 10, 180);
+    return doc.output('datauristring'); // Returns a data URI containing the PDF
+  };
+
+  const publishPayslip = async () => {
+    const pdfDataUri = await generatePayslipPDF();
+    const formData = new FormData();
+    formData.append('to', 'employee@example.com');
+    formData.append('subject', 'Your Payslip');
+    formData.append('text', 'Please find your payslip attached.');
+    formData.append('attachment', pdfDataUri);
+
+    try {
+      const response = await fetch('http://localhost:3000/send-payslip', {
+        method: 'POST',
+        body: JSON.stringify({
+          to: 'employee@example.com',
+          subject: 'Your Payslip',
+          text: 'Please find your payslip attached.',
+          attachment: pdfDataUri
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      const result = await response.text();
+      console.log(result);
+    } catch (error) {
+      console.error('Error sending payslip:', error);
+    }
+  };
 
   return (
     <div className="payslip-container">
@@ -241,6 +294,10 @@ const Payslip = () => {
             </tr>
           </tbody>
         </table>
+      </div>
+      <div className="action-buttons">
+        <button className="publish-button" onClick={generatePayslipPDF}>Generate PDF</button>
+        <button className="publish-button" onClick={publishPayslip}>Publish Payslip</button>
       </div>
     </div>
   );
