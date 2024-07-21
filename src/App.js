@@ -12,7 +12,7 @@ import SkilledNursingCarePage from './pages/SkilledNursingCarePage';
 import ElderlyCarePage from './pages/ElderlyCarePage';
 import CompanionshipAndSocializationPage from './pages/CompanionshipAndSocializationPage';
 import LightHousekeepingPage from './pages/LightHousekeepingPage';
-
+import Payslip from './pages/Payslip';
 
 
 
@@ -38,7 +38,9 @@ const App = () => {
           <Route path="/pages/ElderlyCarePage" element={<ElderlyCarePage/>} />
           <Route path="/pages/CompanionshipAndSocializationPage" element={<CompanionshipAndSocializationPage/>} />
           <Route path="/pages/LightHousekeepingPage" element={<LightHousekeepingPage/>} />
+          <Route path="/pages/Payslip" element={<Payslip/>} />
         </Routes>
+        
       </div>
     </Router>
   );

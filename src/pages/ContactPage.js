@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaSearch, FaBars, FaFacebook, FaTwitter, FaInstagram, FaPhone, FaWhatsapp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-//import './SportsHomePage.css';
 import './contact.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import axios from 'axios';
@@ -11,7 +10,6 @@ const ContactFormPage = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const isSmallScreen = window.innerWidth <= 600;
 
-    // List of background images for the slide effect
     const images = [
         '/handcare.JPG',
         '/50 care.jpg',
@@ -55,8 +53,9 @@ const ContactFormPage = () => {
         { name: 'Home', id: 1, link: '/' },
         { name: 'About Us', id: 4, link: '/about-us' },
         { name: 'Services', id: 2, link: '/services' },
-        { name: 'blog', id: 3, link: '/blog' },
+        { name: 'Blog', id: 3, link: '/blog' },
         { name: 'Contact Us', id: 5, link: '/contact' },
+        { name: 'Payslip', id: 6, link: '/pages/Payslip' }, // Add Payslip link here
     ];
 
     const footerCategories = [
@@ -99,9 +98,6 @@ const ContactFormPage = () => {
                 </div>
             </nav>
 
-
-            
-
             <section className="hero" style={heroBackgroundStyles}>
                 <div className="container">
                     <div className="content" style={{ color: 'white', marginBottom: '60px' }}>
@@ -127,8 +123,6 @@ const ContactFormPage = () => {
                     </div>
                 </div>
             </section>
-
-
 
             <div className="contact-section">
                 <div className="container">
@@ -162,7 +156,6 @@ const ContactFormPage = () => {
             </div>
 
             <footer className="footer">
-                
                 {footerCategories.map(category => (
                     <div className="footer-column" key={category.id}>
                         <h2>{category.name}</h2>
@@ -177,45 +170,33 @@ const ContactFormPage = () => {
                         </ul>
                     </div>
                 ))}
-                 {/* Social media icons */}
-    <div className="footer-column social-media">
-        <h2>Follow Us</h2>
-        <div className="social-icons">
-            <a href=""><FaFacebook /></a>
-            <a href="#"><FaTwitter /></a>
-            <a href=""><FaInstagram /></a>
-            {/* Add more social media icons as needed */}
-        </div>
-        <div className="logo">
-                    <img 
-                        src={process.env.PUBLIC_URL + '/logo.JPG'} 
-                        alt="Logo" 
-                        style={{ 
-                            width: '70px', 
-                            height: 'auto',
-                            borderRadius: '10px'  // Adjust the border radius as per your design
-                        }} 
-                    />
+                <div className="footer-column social-media">
+                    <h2>Follow Us</h2>
+                    <div className="social-icons">
+                        <a href=""><FaFacebook /></a>
+                        <a href="#"><FaTwitter /></a>
+                        <a href=""><FaInstagram /></a>
+                    </div>
+                    <div className="logo">
+                        <img src={process.env.PUBLIC_URL + '/logo.JPG'} alt="Logo" style={{ width: '70px', height: 'auto', borderRadius: '10px' }} />
+                    </div>
                 </div>
-    </div>
-    
- </footer>
+            </footer>
 
-<div className="copyright">
-    <p>© 2015 home healthcare services. All rights reserved.</p>
-</div>
+            <div className="copyright">
+                <p>© 2015 home healthcare services. All rights reserved.</p>
+            </div>
 
-{/* WhatsApp button */}
-
-<div className="whatsapp-container">
-<div className="whatsapp-text-container">
-<span className="whatsapp-text">How can I help you ?</span>
-</div>
-    <button className="whatsapp-button" onClick={handleWhatsAppClick}>
-        <FaWhatsapp />
-    </button>
-    </div>  
-</div>
+            <div className="whatsapp-container">
+                <div className="whatsapp-text-container">
+                    <span className="whatsapp-text">Reach us quickly via WhatsApp</span>
+                </div>
+                <a href="https://wa.me/+2348020956712" onClick={handleWhatsAppClick} className="whatsapp-button">
+                    <FaWhatsapp className="whatsapp-icon" />
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
     );
 };
 
