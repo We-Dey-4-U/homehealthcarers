@@ -96,6 +96,7 @@ const Payslip = () => {
   };
 
   const publishPayslip = async () => {
+    console.log('publishPayslip function called');
     const pdfDataUri = await generatePayslipPDF();
     const formData = new FormData();
     formData.append('to', 'employee@example.com');
@@ -257,6 +258,22 @@ const Payslip = () => {
               <td className="table-cell">₦{yearlyGrossIncome.toFixed(2)}</td>
               <td className="table-cell">₦{grossIncome.toFixed(2)}</td>
             </tr>
+
+            <tr>
+              <td className="table-cell">P.A.Y.E (Pay As You Earn)</td>
+              <td className="table-cell">₦{(monthlyPaye * 12).toFixed(2)}</td>
+              <td className="table-cell">₦{monthlyPaye.toFixed(2)}</td>
+            </tr>
+
+
+            <tr>
+              <td className="table-cell">Pension</td>
+              <td className="table-cell">₦{(monthlyPension * 12).toFixed(2)}</td>
+              <td className="table-cell">₦{monthlyPension.toFixed(2)}</td>
+            </tr>
+           
+
+
             <tr>
               <td className="table-cell">Housing Allowance</td>
               <td className="table-cell">₦{(monthlyHousingAllowance * 12).toFixed(2)}</td>

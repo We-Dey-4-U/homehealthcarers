@@ -114,7 +114,7 @@ const PersonalCarePage = () => {
             name: 'Visit Us',
             id: 6,
             dropdownItems: [
-                '104A Ogudu Rd, Ojota, Ikeja, Lagos, Nigeria', 
+                '12, Akintan Street Off demurin Street, ketu ,lagos',  
                 '+2348020956712', 
                 'homehealthcarers@gmail.com']
         },
