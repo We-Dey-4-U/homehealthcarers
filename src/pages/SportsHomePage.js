@@ -304,7 +304,7 @@ const SportsHomePage = () => {
           className="contact-icon"
           style={{ marginRight: '10px' }}
         />
-        017360442 or send us a message
+        +2348039346094 or send us a message
       </h3>
                     </div>
                 </div>
