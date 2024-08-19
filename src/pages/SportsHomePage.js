@@ -123,7 +123,7 @@ const SportsHomePage = () => {
             name: 'Visit Us',
             id: 6,
             dropdownItems: [
-                '21, Akintan Street, ketu ,lagos', 
+                '21 Akintan Street, ketu ,lagos', 
                 '+2348020956712', 
                 'homehealthcarers@gmail.com']
         },
